@@ -1,3 +1,15 @@
+%button-style {
+    appearance: none;
+    padding: 0.2% 0.5%;
+    background: lightgray;
+    border: solid 2px lightgray;
+    border-radius: 3px;
+    font-size: 1.2em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 
 * {
     padding: 0;
@@ -9,6 +21,7 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
+
 // navigation bar --------------------------------------------------------------------
 nav {
     background: skyblue;
@@ -18,7 +31,7 @@ nav {
     }
     input {
         appearance: none;
-        transform: translateY(-15%);
+        transform: translateY(-25%);
         margin-left: 5%;
         height: 30px;
         width: 20%;
@@ -27,18 +40,10 @@ nav {
         font-size: 1.1em;
     }
     button {
-        appearance: none;
+        @extend %button-style;
         float: right;
-        padding: 0.2% 0.5%;
-        transform: translateY(10%);
+        transform: translateY(20%);
         margin-right: 5%;
-        background: lightgray;
-        border: solid 2px lightgray;
-        border-radius: 3px;
-        font-size: 1.2em;
-        &:hover {
-            cursor: pointer;
-        }
     }
 }
 
@@ -84,5 +89,31 @@ nav {
         margin-left: 2%;
         text-decoration: none;
         color: red;
+    }
+}
+
+
+
+// account page --------------------------------------------------------------------
+.edit-profile {
+    margin: 3% auto;
+    text-align: center;
+}
+
+.profile-info {
+    margin-bottom: 2%;
+    font-size: 1.2em;
+    i {
+        transform: scale(1.5);
+    }
+    span {
+        margin-left: 2%;
+    }
+}
+
+.account-options button {
+    @extend %button-style;
+    &:nth-child(2) {
+        margin: auto 2%;
     }
 }

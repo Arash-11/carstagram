@@ -1,8 +1,10 @@
 import React , { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from '../../Firebase';
+import { auth , db } from '../../Firebase';
 
 function Join() {
+    // let userName;
+
     const [userDetails, setUserDetails] = useState({
         username: '',
         password: '',
@@ -32,12 +34,27 @@ function Join() {
         // ensuring Firebase creates an account
         const email = `${username}@carstagram.com`;
         auth.createUserWithEmailAndPassword(email, password)
-            .then(() => window.location.pathname = '/')
+            .then(() => {
+                db.collection("users").add({
+                    displayName: username
+                })
+                .then(function(docRef) {
+                    console.log("Document written with ID: ", docRef.id);
+                })
+                .catch(function(error) {
+                    console.error("Error adding document: ", error);
+                });
+                window.location.pathname = '/';
+            })
             .catch(error => {
                 console.log(error.code, error.message);
                 alert('something went wrong');
             });
     }
+
+    // function addNameToDb() {
+        
+    // }
 
     return (
         <form className="login-join-form" onSubmit={handleSubmit}>

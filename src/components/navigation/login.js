@@ -10,7 +10,7 @@ function Login() {
 
     const {username, password} = loginDetails;
 
-    const handleChange = (event) => {
+    function handleChange(event) {
         const {name, value} = event.target;
         setLoginDetails(prevValue => {
             return {
@@ -20,17 +20,20 @@ function Login() {
         });
     }
 
-    const handleSubmit = (event) => {
+    function handleSubmit(event) {
         event.preventDefault();
         logintoAccount();
     }
 
-    const logintoAccount = () => {
-        // a "hack" to allow user to just create an account with username, but at the same time,
-        // ensuring Firebase creates an account
+    function logintoAccount() {
+        // a "hack" to allow user to just create an account with username but,
+        // ensuring Firebase actually creates the account by turning it into an email
         const email = `${username}@carstagram.com`;
         auth.signInWithEmailAndPassword(email, password)
-            .then(() => window.location.pathname = '/')
+            .then(() => {
+                alert('Sign in successful!');
+                window.location.pathname = '/';
+            })
             .catch(error => {
                 console.log(error.code, error.message);
                 alert('something went wrong');

@@ -1,3 +1,18 @@
+nav button, .account-options button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0.2% 0.5%;
+  background: lightgray;
+  border: solid 2px lightgray;
+  border-radius: 3px;
+  font-size: 1.2em;
+}
+
+nav button:hover, .account-options button:hover {
+  cursor: pointer;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -22,8 +37,8 @@ nav input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  -webkit-transform: translateY(-15%);
-          transform: translateY(-15%);
+  -webkit-transform: translateY(-25%);
+          transform: translateY(-25%);
   margin-left: 5%;
   height: 30px;
   width: 20%;
@@ -33,22 +48,10 @@ nav input {
 }
 
 nav button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   float: right;
-  padding: 0.2% 0.5%;
-  -webkit-transform: translateY(10%);
-          transform: translateY(10%);
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
   margin-right: 5%;
-  background: lightgray;
-  border: solid 2px lightgray;
-  border-radius: 3px;
-  font-size: 1.2em;
-}
-
-nav button:hover {
-  cursor: pointer;
 }
 
 .login-join-form {
@@ -103,5 +106,28 @@ nav button:hover {
   margin-left: 2%;
   text-decoration: none;
   color: red;
+}
+
+.edit-profile {
+  margin: 3% auto;
+  text-align: center;
+}
+
+.profile-info {
+  margin-bottom: 2%;
+  font-size: 1.2em;
+}
+
+.profile-info i {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.profile-info span {
+  margin-left: 2%;
+}
+
+.account-options button:nth-child(2) {
+  margin: auto 2%;
 }
 /*# sourceMappingURL=style.css.map */
