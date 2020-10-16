@@ -117,3 +117,49 @@ nav {
         margin: auto 2%;
     }
 }
+
+
+
+// modal --------------------------------------------------------------------
+.password-modal {
+    position: absolute;
+    margin: 15% 20% 0;
+    height: 40vh;
+    width: 60%;
+    z-index: 10;
+    background: skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.password-modal span {
+    color: red;
+    margin: -6% 0 0 95%;
+    font-size: 2em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.password-modal label, .password-modal input, .password-modal button {
+    margin-left: 25%;
+}
+
+.password-modal input {
+    width: 50%;
+    height: 10%;
+    padding: 1% 2%;
+    margin-bottom: 1%;
+}
+
+.password-modal button {
+    margin-top: 4%;
+    width: 50%;
+    height: 10%;
+    &:hover {
+        cursor: pointer;
+    }
+}

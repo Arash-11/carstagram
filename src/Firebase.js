@@ -3,14 +3,14 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBmTZsRYQh4kqILJ1cWY935gONzNWrrkY0",
-    authDomain: "carstagram-react.firebaseapp.com",
-    databaseURL: "https://carstagram-react.firebaseio.com",
-    projectId: "carstagram-react",
-    storageBucket: "carstagram-react.appspot.com",
-    messagingSenderId: "789677972926",
-    appId: "1:789677972926:web:b212a2a8624fa90ba5edef",
-    measurementId: "G-WYP8HKZMZH"
+    apiKey: "AIzaSyBAllZhTQLY1F5_ESG_qJVCHHhrPivLMzU",
+    authDomain: "organizr-1be2c.firebaseapp.com",
+    databaseURL: "https://organizr-1be2c.firebaseio.com",
+    projectId: "organizr-1be2c",
+    storageBucket: "organizr-1be2c.appspot.com",
+    messagingSenderId: "666570776322",
+    appId: "1:666570776322:web:20dd1215f5c5a07d9f2c1b",
+    measurementId: "G-ZDG59TZWDX"
 };
 
 firebase.initializeApp(firebaseConfig);

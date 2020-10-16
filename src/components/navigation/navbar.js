@@ -14,7 +14,7 @@ function Navbar() {
 
     return (
         <nav>
-            <span>Carstagram</span>
+            <span>Organizr</span>
             <input type="search" placeholder="Search"></input>
             {isLoggedIn
                 ? 
@@ -24,7 +24,7 @@ function Navbar() {
                 </>
                 :
                 <>
-                    <Link to="/join"><button>Join free</button></Link>
+                    <Link to="/signup"><button>Sign Up</button></Link>
                     <Link to="/login"><button>Login</button></Link>
                 </>
             }

@@ -28,7 +28,7 @@ function Login() {
     function logintoAccount() {
         // a "hack" to allow user to just create an account with username but,
         // ensuring Firebase actually creates the account by turning it into an email
-        const email = `${username}@carstagram.com`;
+        const email = `${username}@organizr.com`;
         auth.signInWithEmailAndPassword(email, password)
             .then(() => {
                 alert('Sign in successful!');
@@ -42,11 +42,12 @@ function Login() {
 
     return (
         <form className="login-join-form" onSubmit={handleSubmit}>
-            <h1>Carstagram</h1>
+            <h1>Organizr</h1>
             <label>Username</label>
             <input 
                 type="text"
                 name="username"
+                value={username}
                 onChange={handleChange}
                 required>
             </input>
@@ -54,13 +55,14 @@ function Login() {
             <input 
                 type="password"
                 name="password"
+                value={password}
                 onChange={handleChange}
                 required>
             </input>
             <button type="submit">Login</button>
             <p>
                 Don't have an account?
-                <Link to="/join" className="navlink">Join free</Link>
+                <Link to="/signup" className="navlink">Sign up</Link>
             </p>
         </form>
     );

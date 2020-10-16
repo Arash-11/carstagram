@@ -1,10 +1,8 @@
 import React , { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { auth , db } from '../../Firebase';
+import { auth } from '../../Firebase';
 
-function Join() {
-    // let userName;
-
+function SignUp() {
     const [userDetails, setUserDetails] = useState({
         username: '',
         password: '',
@@ -13,7 +11,7 @@ function Join() {
 
     const {username, password, confirmedPassword} = userDetails;
 
-    const handleChange = (event) => {
+    function handleChange(event) {
         const {name, value} = event.target;
         setUserDetails(prevValue => {
             return {
@@ -23,48 +21,34 @@ function Join() {
         });
     }
 
-    const handleSubmit  = (event) => {
+    function handleSubmit(event) {
         event.preventDefault();
         if (password === confirmedPassword) createUser();
         else alert('Passwords do not match, try again.');
     }
 
-    const createUser = () => {
+    function createUser() {
         // a "hack" to allow user to just create an account with username, but at the same time,
         // ensuring Firebase creates an account
-        const email = `${username}@carstagram.com`;
+        const email = `${username}@organizr.com`;
         auth.createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                db.collection("users").add({
-                    displayName: username
-                })
-                .then(function(docRef) {
-                    console.log("Document written with ID: ", docRef.id);
-                })
-                .catch(function(error) {
-                    console.error("Error adding document: ", error);
-                });
-                window.location.pathname = '/';
-            })
+            .then(() => window.location.pathname = '/')
             .catch(error => {
                 console.log(error.code, error.message);
                 alert('something went wrong');
             });
     }
 
-    // function addNameToDb() {
-        
-    // }
-
     return (
         <form className="login-join-form" onSubmit={handleSubmit}>
-            <h1>Carstagram</h1>
+            <h1>Organizr</h1>
             <label>Create Username</label>
             <input
                 type="text"
                 name="username"
                 onChange={handleChange}
                 value={username}
+                placeholder=""
                 required>
             </input>
             <label>Create Password</label>
@@ -83,7 +67,7 @@ function Join() {
                 value={confirmedPassword}
                 required>
             </input>
-            <button type="submit">Join free</button>
+            <button type="submit">Sign up</button>
             <p>
                 Have an account?
                 <Link to="/login" className="navlink">Login</Link>
@@ -92,4 +76,4 @@ function Join() {
     );
 }
 
-export default Join;
+export default SignUp;
