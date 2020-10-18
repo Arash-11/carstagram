@@ -1,4 +1,4 @@
-nav button, .account-options button {
+nav .signup_button, nav .login_button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -9,7 +9,7 @@ nav button, .account-options button {
   font-size: 1.2em;
 }
 
-nav button:hover, .account-options button:hover {
+nav .signup_button:hover, nav .login_button:hover {
   cursor: pointer;
 }
 
@@ -22,6 +22,7 @@ nav button:hover, .account-options button:hover {
 
 body {
   font-family: 'Noto Sans JP', sans-serif;
+  overflow: hidden;
 }
 
 nav {
@@ -47,11 +48,64 @@ nav input {
   font-size: 1.1em;
 }
 
-nav button {
+nav .signup_button, nav .login_button {
   float: right;
   -webkit-transform: translateY(20%);
           transform: translateY(20%);
   margin-right: 5%;
+}
+
+.account_icon {
+  float: right;
+  margin-right: 5%;
+  padding-top: 0.5%;
+}
+
+.account_icon:hover {
+  cursor: pointer;
+}
+
+.options-modal {
+  position: absolute;
+  right: 2%;
+  padding: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  z-index: 10;
+  background: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+}
+
+.options-modal button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: red;
+  background: transparent;
+  border: none;
+  font-size: 1.2em;
+}
+
+.options-modal button:hover {
+  cursor: pointer;
+  background: yellow;
 }
 
 .login-join-form {
@@ -108,29 +162,6 @@ nav button {
   color: red;
 }
 
-.edit-profile {
-  margin: 3% auto;
-  text-align: center;
-}
-
-.profile-info {
-  margin-bottom: 2%;
-  font-size: 1.2em;
-}
-
-.profile-info i {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-}
-
-.profile-info span {
-  margin-left: 2%;
-}
-
-.account-options button:nth-child(2) {
-  margin: auto 2%;
-}
-
 .password-modal {
   position: absolute;
   margin: 15% 20% 0;
@@ -182,6 +213,31 @@ nav button {
 }
 
 .password-modal button:hover {
+  cursor: pointer;
+}
+
+.left-panel {
+  position: relative;
+  left: 0;
+  background: lightgreen;
+  height: 100vh;
+  width: 20vw;
+}
+
+.left-panel button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: inline-block;
+  min-width: 50%;
+  padding: 2% 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.left-panel button:hover {
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

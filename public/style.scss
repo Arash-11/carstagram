@@ -19,6 +19,7 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
+    overflow: hidden;
 }
 
 
@@ -39,11 +40,49 @@ nav {
         border-radius: 3px;
         font-size: 1.1em;
     }
-    button {
+    .signup_button, .login_button {
         @extend %button-style;
         float: right;
         transform: translateY(20%);
         margin-right: 5%;
+    }
+}
+
+.account_icon {
+    float: right;
+    margin-right: 5%;
+    padding-top: 0.5%;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+// account dropdown modal --------------------------------------------------------------------------
+.options-modal {
+    position: absolute;
+    right: 2%;
+    padding: 5px;
+    height: fit-content;
+    width: fit-content;
+    z-index: 10;
+    background: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.options-modal button {
+    appearance: none;
+    outline: red;
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    &:hover {
+        cursor: pointer;
+        background: yellow;
     }
 }
 
@@ -94,33 +133,7 @@ nav {
 
 
 
-// account page --------------------------------------------------------------------
-.edit-profile {
-    margin: 3% auto;
-    text-align: center;
-}
-
-.profile-info {
-    margin-bottom: 2%;
-    font-size: 1.2em;
-    i {
-        transform: scale(1.5);
-    }
-    span {
-        margin-left: 2%;
-    }
-}
-
-.account-options button {
-    @extend %button-style;
-    &:nth-child(2) {
-        margin: auto 2%;
-    }
-}
-
-
-
-// modal --------------------------------------------------------------------
+// password-change modal ------------------------------------------------------------------------
 .password-modal {
     position: absolute;
     margin: 15% 20% 0;
@@ -159,6 +172,31 @@ nav {
     margin-top: 4%;
     width: 50%;
     height: 10%;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+// Mainpage left panel --------------------------------------------------------------------
+.left-panel {
+    position: relative;
+    left: 0;
+    background: lightgreen;
+    height: 100vh;
+    width: 20vw;
+}
+
+.left-panel button {
+    appearance: none;
+    display: inline-block;
+    min-width: 50%;
+    padding: 2% 0;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 1.2em;
     &:hover {
         cursor: pointer;
     }

@@ -1,9 +1,13 @@
 import React, { useState , useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../Firebase';
+import OptionsDropdown from './OptionsDropdown';
 
 function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState();
+
+    // state of the account options' display
+    const [isDisplayed, setIsDisplayed] = useState(false);
 
     useEffect(() => {
         auth.onAuthStateChanged(function(user) {
@@ -12,6 +16,10 @@ function Navbar() {
         });
     }, [isLoggedIn]);
 
+    const showOptions = () => {
+        setIsDisplayed(!isDisplayed);
+    }
+
     return (
         <nav>
             <span>Organizr</span>
@@ -19,13 +27,13 @@ function Navbar() {
             {isLoggedIn
                 ? 
                 <>
-                    <Link to="/account"><button>Account</button></Link>
-                    <button>Upload</button>
+                    { isDisplayed && <OptionsDropdown /> }
+                    <i className="fas fa-user-circle fa-2x account_icon" onClick={showOptions}></i>
                 </>
                 :
                 <>
-                    <Link to="/signup"><button>Sign Up</button></Link>
-                    <Link to="/login"><button>Login</button></Link>
+                    <Link to="/signup"><button className="signup_button">Sign Up</button></Link>
+                    <Link to="/login"><button className="login_button">Login</button></Link>
                 </>
             }
         </nav>

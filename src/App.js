@@ -1,8 +1,7 @@
 import React from 'react';
-import Login from './components/navigation/login';
-import SignUp from './components/navigation/signup';
-import Navbar from './components/navigation/navbar';
-import Account from './components/account/account';
+import Login from './components/navigation/Login';
+import SignUp from './components/navigation/Signup';
+import Mainpage from './Mainpage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,10 +12,9 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Navbar} exact />
+        <Route path="/" component={Mainpage} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={SignUp} exact />
-        <Route path="/account" component={Account} exact />
       </Switch>
     </Router>
   );
