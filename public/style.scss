@@ -28,17 +28,8 @@ nav {
     background: skyblue;
     padding: 0.5% 0;
     span {
+        margin-left: 2%;
         font-size: 2em;
-    }
-    input {
-        appearance: none;
-        transform: translateY(-25%);
-        margin-left: 5%;
-        height: 30px;
-        width: 20%;
-        border: solid 2px white;
-        border-radius: 3px;
-        font-size: 1.1em;
     }
     .signup_button, .login_button {
         @extend %button-style;
@@ -188,16 +179,34 @@ nav {
     width: 20vw;
 }
 
+.left-panel input {
+    appearance: none;
+    display: inline-block;
+    width: 80%;
+    padding: 2%;
+    margin-bottom: 5%;
+    border: none;
+}
+
 .left-panel button {
     appearance: none;
     display: inline-block;
-    min-width: 50%;
+    width: 20%;
     padding: 2% 0;
+    margin-bottom: 5%;
     border: none;
     background: transparent;
     text-align: center;
-    font-size: 1.2em;
     &:hover {
         cursor: pointer;
     }
+}
+
+.left-panel_item {
+    appearance: none;
+    display: inline-block;
+    width: 100%;
+    padding: 2% 0;
+    border: none;
+    text-align: center;
 }

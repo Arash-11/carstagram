@@ -23,7 +23,6 @@ function Navbar() {
     return (
         <nav>
             <span>Organizr</span>
-            <input type="search" placeholder="Search"></input>
             {isLoggedIn
                 ? 
                 <>

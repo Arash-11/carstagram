@@ -31,21 +31,8 @@ nav {
 }
 
 nav span {
+  margin-left: 2%;
   font-size: 2em;
-}
-
-nav input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-transform: translateY(-25%);
-          transform: translateY(-25%);
-  margin-left: 5%;
-  height: 30px;
-  width: 20%;
-  border: solid 2px white;
-  border-radius: 3px;
-  font-size: 1.1em;
 }
 
 nav .signup_button, nav .login_button {
@@ -224,20 +211,42 @@ nav .signup_button, nav .login_button {
   width: 20vw;
 }
 
+.left-panel input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: inline-block;
+  width: 80%;
+  padding: 2%;
+  margin-bottom: 5%;
+  border: none;
+}
+
 .left-panel button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   display: inline-block;
-  min-width: 50%;
+  width: 20%;
   padding: 2% 0;
+  margin-bottom: 5%;
   border: none;
   background: transparent;
   text-align: center;
-  font-size: 1.2em;
 }
 
 .left-panel button:hover {
   cursor: pointer;
+}
+
+.left-panel_item {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: inline-block;
+  width: 100%;
+  padding: 2% 0;
+  border: none;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
