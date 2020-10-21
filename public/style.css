@@ -204,7 +204,7 @@ nav .signup_button, nav .login_button {
 }
 
 .left-panel {
-  position: relative;
+  position: absolute;
   left: 0;
   background: lightgreen;
   height: 100vh;
@@ -222,7 +222,7 @@ nav .signup_button, nav .login_button {
   border: none;
 }
 
-.left-panel button {
+.left-panel .add-button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -235,11 +235,11 @@ nav .signup_button, nav .login_button {
   text-align: center;
 }
 
-.left-panel button:hover {
+.left-panel .add-button:hover {
   cursor: pointer;
 }
 
-.left-panel_item {
+.topic-button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -247,6 +247,19 @@ nav .signup_button, nav .login_button {
   width: 100%;
   padding: 2% 0;
   border: none;
+  background: transparent;
   text-align: center;
+  font-size: 1.2em;
+}
+
+.topic-button:hover {
+  cursor: pointer;
+}
+
+.main-content {
+  position: absolute;
+  right: 5%;
+  color: red;
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=style.css.map */

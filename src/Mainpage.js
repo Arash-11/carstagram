@@ -1,13 +1,15 @@
 import React from 'react';
 import Navbar from './components/navigation/Navbar';
-import LeftPanel from './components/LeftPanel';
+import TopicPanel from './components/TopicPanel';
+import TopicContent from './components/TopicContent';
 
 function Mainpage() {
 
     return (
         <>
             <Navbar />
-            <LeftPanel />
+            <TopicPanel />
+            <TopicContent />
         </>
     );
 }

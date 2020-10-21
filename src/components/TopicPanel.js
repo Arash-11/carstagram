@@ -1,6 +1,6 @@
 import React , { useState } from 'react';
 
-function LeftPanel () {
+function TopicPanel (props) {
     // for values that are being typed into "input"
     const [inputValue, setInputValue] = useState({
         topic: ''
@@ -8,6 +8,8 @@ function LeftPanel () {
 
     // all added topics that show on left panel will be added to the 'topic' array
     const [topic, setTopic] = useState([]);
+
+    let contentName;
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -28,6 +30,15 @@ function LeftPanel () {
         });
     }
 
+    const identifyText = (event) => {
+        contentName = event.target.textContent;
+        changeContent();
+    }
+
+    const changeContent = (props) => {
+        props.contentName = contentName;
+    }
+
     return (
         <div className="left-panel">
             <input 
@@ -37,11 +48,11 @@ function LeftPanel () {
                 value={inputValue.topic}
                 onChange={handleChange}
             />
-            <button onClick={addTopic}><i className="fas fa-plus"></i></button>
+            <button onClick={addTopic} className="add-button"><i className="fas fa-plus"></i></button>
             {topic.map(item => {
                 return (
                     <React.Fragment key={topic.indexOf(item)}>
-                        <p>{item}</p>
+                        <button onClick={identifyText} className="topic-button">{item}</button>
                     </React.Fragment>
                 );
             })}
@@ -49,4 +60,4 @@ function LeftPanel () {
     );
 }
 
-export default LeftPanel;
+export default TopicPanel;

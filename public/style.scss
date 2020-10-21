@@ -172,7 +172,7 @@ nav {
 
 // Mainpage left panel --------------------------------------------------------------------
 .left-panel {
-    position: relative;
+    position: absolute;
     left: 0;
     background: lightgreen;
     height: 100vh;
@@ -188,7 +188,7 @@ nav {
     border: none;
 }
 
-.left-panel button {
+.left-panel .add-button {
     appearance: none;
     display: inline-block;
     width: 20%;
@@ -202,11 +202,26 @@ nav {
     }
 }
 
-.left-panel_item {
+.topic-button {
     appearance: none;
     display: inline-block;
     width: 100%;
     padding: 2% 0;
     border: none;
+    background: transparent;
     text-align: center;
+    font-size: 1.2em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+// Mainpage left panel --------------------------------------------------------------------
+.main-content {
+    position: absolute;
+    right: 5%;
+    color: red;
+    font-size: 1.5em;
 }
