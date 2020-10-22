@@ -10,7 +10,7 @@ function OptionsDropdown() {
         auth.signOut()
             .then(function() {
                 console.log('Sign-out successful.');
-                window.location.pathname = '/';
+                window.location.pathname = '/login';
             })
             .catch(function(error) {
                 console.log(error.code, error.message);

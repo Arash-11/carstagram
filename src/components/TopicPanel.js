@@ -30,13 +30,9 @@ function TopicPanel (props) {
         });
     }
 
-    const identifyText = (event) => {
+    const changeContent = (event) => {
         contentName = event.target.textContent;
-        changeContent();
-    }
-
-    const changeContent = (props) => {
-        props.contentName = contentName;
+        props.changeContent(contentName);
     }
 
     return (
@@ -48,11 +44,11 @@ function TopicPanel (props) {
                 value={inputValue.topic}
                 onChange={handleChange}
             />
-            <button onClick={addTopic} className="add-button"><i className="fas fa-plus"></i></button>
+            <button onClick={addTopic} className="left-panel-add-button"><i className="fas fa-plus"></i></button>
             {topic.map(item => {
                 return (
                     <React.Fragment key={topic.indexOf(item)}>
-                        <button onClick={identifyText} className="topic-button">{item}</button>
+                        <button onClick={changeContent} className="topic-button">{item}</button>
                     </React.Fragment>
                 );
             })}
