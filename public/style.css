@@ -149,60 +149,6 @@ nav .signup_button, nav .login_button {
   color: red;
 }
 
-.password-modal {
-  position: absolute;
-  margin: 15% 20% 0;
-  height: 40vh;
-  width: 60%;
-  z-index: 10;
-  background: skyblue;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  color: white;
-}
-
-.password-modal span {
-  color: red;
-  margin: -6% 0 0 95%;
-  font-size: 2em;
-}
-
-.password-modal span:hover {
-  cursor: pointer;
-}
-
-.password-modal label, .password-modal input, .password-modal button {
-  margin-left: 25%;
-}
-
-.password-modal input {
-  width: 50%;
-  height: 10%;
-  padding: 1% 2%;
-  margin-bottom: 1%;
-}
-
-.password-modal button {
-  margin-top: 4%;
-  width: 50%;
-  height: 10%;
-}
-
-.password-modal button:hover {
-  cursor: pointer;
-}
-
 .left-panel {
   position: absolute;
   left: 0;
@@ -285,5 +231,63 @@ nav .signup_button, nav .login_button {
 
 .group-add-button:hover {
   cursor: pointer;
+}
+
+.password-modal, .add-link-modal {
+  position: absolute;
+  margin: 5% 20% 0;
+  height: 40vh;
+  width: 60%;
+  z-index: 10;
+  background: skyblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+}
+
+.password-modal span, .add-link-modal span {
+  color: red;
+  margin: -6% 0 0 95%;
+  font-size: 2em;
+}
+
+.password-modal span:hover, .add-link-modal span:hover {
+  cursor: pointer;
+}
+
+.password-modal label, .password-modal input, .password-modal button {
+  margin-left: 25%;
+}
+
+.password-modal input {
+  width: 50%;
+  height: 10%;
+  padding: 1% 2%;
+  margin-bottom: 1%;
+}
+
+.password-modal button, .add-link-modal button {
+  margin-top: 4%;
+  width: 50%;
+  height: 10%;
+}
+
+.password-modal button:hover, .add-link-modal button:hover {
+  cursor: pointer;
+}
+
+.add-link-modal {
+  padding-left: 5%;
 }
 /*# sourceMappingURL=style.css.map */

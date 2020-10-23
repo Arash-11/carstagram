@@ -11,7 +11,7 @@ function SignUp() {
 
     const {username, password, confirmedPassword} = userDetails;
 
-    function handleChange(event) {
+    const handleChange = (event) => {
         const {name, value} = event.target;
         setUserDetails(prevValue => {
             return {
@@ -21,13 +21,13 @@ function SignUp() {
         });
     }
 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
         if (password === confirmedPassword) createUser();
         else alert('Passwords do not match, try again.');
     }
 
-    function createUser() {
+    const createUser = () => {
         // a "hack" to allow user to just create an account with username, but at the same time,
         // ensuring Firebase creates an account
         const email = `${username}@organizr.com`;

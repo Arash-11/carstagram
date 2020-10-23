@@ -124,52 +124,6 @@ nav {
 
 
 
-// password-change modal ------------------------------------------------------------------------
-.password-modal {
-    position: absolute;
-    margin: 15% 20% 0;
-    height: 40vh;
-    width: 60%;
-    z-index: 10;
-    background: skyblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: white;
-}
-
-.password-modal span {
-    color: red;
-    margin: -6% 0 0 95%;
-    font-size: 2em;
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.password-modal label, .password-modal input, .password-modal button {
-    margin-left: 25%;
-}
-
-.password-modal input {
-    width: 50%;
-    height: 10%;
-    padding: 1% 2%;
-    margin-bottom: 1%;
-}
-
-.password-modal button {
-    margin-top: 4%;
-    width: 50%;
-    height: 10%;
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-
-
 // Mainpage left panel --------------------------------------------------------------------
 .left-panel {
     position: absolute;
@@ -219,7 +173,7 @@ nav {
 
 
 
-// Mainpage left panel --------------------------------------------------------------------
+// Mainpage right panel --------------------------------------------------------------------
 .main-content {
     position: absolute;
     right: 0;
@@ -245,4 +199,54 @@ nav {
     &:hover {
         cursor: pointer;
     }
+}
+
+
+
+// modals -----------------------------------------------------------------------------------
+.password-modal, .add-link-modal {
+    position: absolute;
+    margin: 5% 20% 0;
+    height: 40vh;
+    width: 60%;
+    z-index: 10;
+    background: skyblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.password-modal span, .add-link-modal span {
+    color: red;
+    margin: -6% 0 0 95%;
+    font-size: 2em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.password-modal label, .password-modal input, .password-modal button {
+    margin-left: 25%;
+}
+
+.password-modal input {
+    width: 50%;
+    height: 10%;
+    padding: 1% 2%;
+    margin-bottom: 1%;
+}
+
+.password-modal button, .add-link-modal button {
+    margin-top: 4%;
+    width: 50%;
+    height: 10%;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.add-link-modal {
+    padding-left: 5%;
 }

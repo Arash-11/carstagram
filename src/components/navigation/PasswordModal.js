@@ -9,7 +9,7 @@ function PasswordModal(props) {
 
     const {newPassword, confirmedNewPassword} = updatedPassword;
 
-    function changePassword() {
+    const changePassword = () => {
         auth.currentUser.updatePassword(newPassword)
             .then(function() {
                 // Update successful.
@@ -22,17 +22,17 @@ function PasswordModal(props) {
             });
     }
 
-    function closeModal() {
+    const closeModal = () => {
         props.closeModal();
     }
 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
         if (newPassword === confirmedNewPassword) changePassword();
         else alert('Passwords do not match, try again.');
     }
 
-    function handleChange(event) {
+    const handleChange = (event) => {
         const {name, value} = event.target;
         setUpdatedPassword(prevValue => {
             return {
@@ -51,16 +51,16 @@ function PasswordModal(props) {
                 name="newPassword"
                 onChange={handleChange}
                 value={newPassword}
-                required>
-            </input>
+                required
+            />
             <label>Confirm new password</label>
             <input 
                 type="password"
                 name="confirmedNewPassword"
                 onChange={handleChange}
                 value={confirmedNewPassword}
-                required>
-            </input>
+                required
+            />
             <button type="submit">Update</button>
         </form>
     );

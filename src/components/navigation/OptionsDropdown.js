@@ -6,7 +6,7 @@ function OptionsDropdown() {
     // state of the "change password" modal's display - to check if it's open or closed
     const [isOpen, setIsOpen] = useState(false);
 
-    function logOut() {
+    const logOut = () => {
         auth.signOut()
             .then(function() {
                 console.log('Sign-out successful.');
@@ -17,11 +17,11 @@ function OptionsDropdown() {
             });
     }
 
-    function controlModalDisplay() {
+    const controlModalDisplay = () => {
         setIsOpen(!isOpen);
     }
 
-    function deleteAccount() {
+    const deleteAccount = () => {
         const shouldDelete = prompt('Type in "delete" to erase your account', '');
         if (shouldDelete === 'delete') {
             auth.currentUser.delete()

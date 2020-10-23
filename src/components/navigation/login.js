@@ -10,7 +10,7 @@ function Login() {
 
     const {username, password} = loginDetails;
 
-    function handleChange(event) {
+    const handleChange = (event) => {
         const {name, value} = event.target;
         setLoginDetails(prevValue => {
             return {
@@ -20,12 +20,12 @@ function Login() {
         });
     }
 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
         logintoAccount();
     }
 
-    function logintoAccount() {
+    const logintoAccount = () => {
         // a "hack" to allow user to just create an account with username but,
         // ensuring Firebase actually creates the account by turning it into an email
         const email = `${username}@organizr.com`;

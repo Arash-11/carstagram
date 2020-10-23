@@ -3,11 +3,11 @@ import GroupPanel from './GroupPanel';
 import AddLinkModal from './AddLinkModal';
 
 function TopicContent () {
-    // state of the account options' display
+    // to determine if modal to add content/link/URL is open or closed
     const [isDisplayed, setIsDisplayed] = useState(false);
 
     const showModal = () => {
-        setIsDisplayed(true);
+        setIsDisplayed(!isDisplayed);
     }
 
     function decider(contentName) {
@@ -26,10 +26,13 @@ function TopicContent () {
                 <button onClick={showModal} className="group-add-button">
                     <i className="fas fa-plus"></i>
                 </button>
-                { isDisplayed && <AddLinkModal /> }
+                { isDisplayed && <AddLinkModal closeModal={showModal} /> }
             </div>
         </>
     );
 }
 
 export default TopicContent;
+
+
+// consider using useEffect to sync data between leftpanel and main content on the right

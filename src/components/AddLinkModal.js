@@ -1,11 +1,55 @@
 import React , { useState } from 'react';
 
-function AddLinkModal() {
+function AddLinkModal(props) {
     // state of the "add link" modal's display - to check if it's open or closed
     const [isOpen, setIsOpen] = useState(false);
 
+    const [linkDetails, setLinkDetails] = useState({
+        title: '',
+        url: ''
+    });
+
+    const closeModal = () => {
+        props.closeModal();
+    }
+
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+        setLinkDetails(prevValue => {
+            return {
+                ...prevValue,
+                [name]: value
+            }
+        });
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert('submitted!');
+        closeModal();
+    }
+
     return(
-        <h1>This is the add link modal</h1>
+        <form className="add-link-modal" onSubmit={handleSubmit}>
+            <span onClick={closeModal}>X</span>
+            <label>Title</label>
+            <input 
+                type="text"
+                name="title"
+                onChange={handleChange}
+                value={linkDetails.title}
+                required
+            />
+            <label>URL</label>
+            <input 
+                type="url"
+                name="url"
+                onChange={handleChange}
+                value={linkDetails.url}
+                required
+            />
+            <button type="submit">Enter</button>
+        </form>
     );
 }
 
