@@ -240,7 +240,7 @@ nav .signup_button, nav .login_button {
   cursor: pointer;
 }
 
-.topic-button {
+.group-button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -253,7 +253,7 @@ nav .signup_button, nav .login_button {
   font-size: 1.2em;
 }
 
-.topic-button:hover {
+.group-button:hover {
   cursor: pointer;
 }
 
@@ -273,6 +273,8 @@ nav .signup_button, nav .login_button {
      -moz-appearance: none;
           appearance: none;
   display: inline-block;
+  position: relative;
+  left: 90%;
   width: 5%;
   padding: 5px 0;
   margin-bottom: 5%;
@@ -283,21 +285,5 @@ nav .signup_button, nav .login_button {
 
 .group-add-button:hover {
   cursor: pointer;
-}
-
-.group-details {
-  display: inline-block;
-  width: 30%;
-  margin: 0 1.2% 8%;
-  background: #b1adad;
-}
-
-.group-details summary {
-  list-style: none;
-  cursor: pointer;
-}
-
-.group-details > summary::-webkit-details-marker {
-  display: none;
 }
 /*# sourceMappingURL=style.css.map */
