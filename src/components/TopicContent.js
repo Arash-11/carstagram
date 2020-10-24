@@ -1,6 +1,6 @@
 import React , { useState } from 'react';
 import GroupPanel from './GroupPanel';
-import AddLinkModal from './AddLinkModal';
+import LinkModal from './LinkModal';
 
 function TopicContent () {
     // to determine if modal to add content/link/URL is open or closed
@@ -26,7 +26,7 @@ function TopicContent () {
                 <button onClick={showModal} className="group-add-button">
                     <i className="fas fa-plus"></i>
                 </button>
-                { isDisplayed && <AddLinkModal closeModal={showModal} /> }
+                { isDisplayed && <LinkModal closeModal={showModal} /> }
             </div>
         </>
     );

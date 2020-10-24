@@ -1,4 +1,5 @@
-import React , { useState } from 'react';
+import React , { useState , useEffect } from 'react';
+import { db , auth } from '../Firebase';
 
 function GroupPanel (props) {
     // for values that are being typed into "input"
@@ -11,6 +12,34 @@ function GroupPanel (props) {
 
     let contentName;
 
+    let userID;
+    auth.onAuthStateChanged((user) => {
+        if (user) userID = user.uid; // User is signed in.
+        else return;
+    });
+
+    useEffect(() => {
+            if (userID) { // User is signed in.
+                db.collection('users')
+                    .doc(userID)
+                    .collection('groups')
+                    .get()
+                    .then(group => {
+                        group.forEach(doc => {
+                            setGroup(prevValue => {
+                                return [
+                                    ...prevValue, 
+                                    {'id': doc.id, ...doc.data()}
+                                ]
+                            });
+                        });
+                    }).catch((error) => {
+                        console.log("Error getting document:", error);
+                    });
+            } 
+            else return;
+    }, [userID]);
+
     const handleChange = (event) => {
         const {name, value} = event.target;
         setInputValue(prevValue => {
@@ -21,15 +50,27 @@ function GroupPanel (props) {
     const addGroup = () => {
         if (inputValue.group === '') return;
         else {
-            setGroup(prevValue => {
-                return [
-                    ...prevValue,
-                    inputValue.group
-                ]
-            });
-            setInputValue(() => {
-                return { 'group': '' }
-            });
+            db.collection('users')
+                .doc(userID)
+                .collection(inputValue.group)
+                .add({
+                    something: ''
+                })
+                .then(() => {
+                    console.log("Document successfully written!");
+                    setGroup(prevValue => {
+                        return [
+                            ...prevValue,
+                            inputValue.group
+                        ]
+                    });
+                    setInputValue(() => {
+                        return { 'group': '' }
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error writing document: ", error);
+                });
         }
     }
 

@@ -204,7 +204,7 @@ nav {
 
 
 // modals -----------------------------------------------------------------------------------
-.password-modal, .add-link-modal {
+.password-modal, .link-modal {
     position: absolute;
     margin: 5% 20% 0;
     height: 40vh;
@@ -218,7 +218,7 @@ nav {
     color: white;
 }
 
-.password-modal span, .add-link-modal span {
+.password-modal span, .link-modal span {
     color: red;
     margin: -6% 0 0 95%;
     font-size: 2em;
@@ -238,7 +238,7 @@ nav {
     margin-bottom: 1%;
 }
 
-.password-modal button, .add-link-modal button {
+.password-modal button, .link-modal button {
     margin-top: 4%;
     width: 50%;
     height: 10%;
@@ -247,6 +247,6 @@ nav {
     }
 }
 
-.add-link-modal {
+.link-modal {
     padding-left: 5%;
 }

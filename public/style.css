@@ -233,7 +233,7 @@ nav .signup_button, nav .login_button {
   cursor: pointer;
 }
 
-.password-modal, .add-link-modal {
+.password-modal, .link-modal {
   position: absolute;
   margin: 5% 20% 0;
   height: 40vh;
@@ -256,13 +256,13 @@ nav .signup_button, nav .login_button {
   color: white;
 }
 
-.password-modal span, .add-link-modal span {
+.password-modal span, .link-modal span {
   color: red;
   margin: -6% 0 0 95%;
   font-size: 2em;
 }
 
-.password-modal span:hover, .add-link-modal span:hover {
+.password-modal span:hover, .link-modal span:hover {
   cursor: pointer;
 }
 
@@ -277,17 +277,17 @@ nav .signup_button, nav .login_button {
   margin-bottom: 1%;
 }
 
-.password-modal button, .add-link-modal button {
+.password-modal button, .link-modal button {
   margin-top: 4%;
   width: 50%;
   height: 10%;
 }
 
-.password-modal button:hover, .add-link-modal button:hover {
+.password-modal button:hover, .link-modal button:hover {
   cursor: pointer;
 }
 
-.add-link-modal {
+.link-modal {
   padding-left: 5%;
 }
 /*# sourceMappingURL=style.css.map */

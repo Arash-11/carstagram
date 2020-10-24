@@ -1,9 +1,6 @@
 import React , { useState } from 'react';
 
-function AddLinkModal(props) {
-    // state of the "add link" modal's display - to check if it's open or closed
-    const [isOpen, setIsOpen] = useState(false);
-
+function LinkModal(props) {
     const [linkDetails, setLinkDetails] = useState({
         title: '',
         url: ''
@@ -30,7 +27,7 @@ function AddLinkModal(props) {
     }
 
     return(
-        <form className="add-link-modal" onSubmit={handleSubmit}>
+        <form className="link-modal" onSubmit={handleSubmit}>
             <span onClick={closeModal}>X</span>
             <label>Title</label>
             <input 
@@ -53,10 +50,9 @@ function AddLinkModal(props) {
     );
 }
 
-export default AddLinkModal;
+export default LinkModal;
 
 
 // this modal should ask for three things: title, link/url, and one tag
-// title length should be no longer than 50 words, etc. - there should be a limit
 // user should be able to select tags: article, video, or (personal) notes
 // should also be able to filter content that shows on the page by selecting a tag
