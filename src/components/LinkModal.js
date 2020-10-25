@@ -1,16 +1,6 @@
 import React , { useState } from 'react';
-import { db , auth } from '../Firebase';
 
 function LinkModal(props) {
-    // to determine current group
-    // const [currentGroupName, setCurrentGroupName] = useState('');
-
-    // let userID;
-    // auth.onAuthStateChanged((user) => {
-    //     if (user) userID = user.uid; // User is signed in.
-    //     else return;
-    // });
-
     const [linkDetails, setLinkDetails] = useState({
         title: '',
         url: ''
@@ -35,28 +25,6 @@ function LinkModal(props) {
         props.submitData(linkDetails);
         closeModal();
     }
-
-    // const addToDatabase = () => {
-    //     if (currentGroupName) {
-    //         alert('adding data..');
-    //         db.collection(userID)
-    //             .doc('groups')
-    //             .collection(currentGroupName)
-    //             .add({
-    //                 title: linkDetails.title,
-    //                 url: linkDetails.url
-    //             })
-    //             .then(() => {
-    //                 alert('data added');
-    //             })
-    //             .catch((error) => {
-    //                 console.error("Error writing document: ", error);
-    //             });
-    //     }
-    //     else {
-    //         alert('cannot add to database');
-    //     }
-    // }
 
     return (
         <>
@@ -85,8 +53,3 @@ function LinkModal(props) {
 }
 
 export default LinkModal;
-
-
-// this modal should ask for three things: title, link/url, and one tag
-// user should be able to select tags: article, video, or (personal) notes
-// should also be able to filter content that shows on the page by selecting a tag

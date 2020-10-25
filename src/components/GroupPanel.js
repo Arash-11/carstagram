@@ -91,7 +91,6 @@ function GroupPanel (props) {
 
     const selectGroup = (event) => {
         groupName = event.target.textContent;
-        alert('selected group is ' + groupName);
         props.selectGroup(groupName);
     }
 

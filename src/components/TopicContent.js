@@ -44,19 +44,26 @@ function TopicContent () {
             }
             else return;
         });
+
+        // cleanup function
+        const removePreviousContent = () => {
+            setGroupContent([]);
+        }
+        return removePreviousContent();
+        
     }, [currentGroup, userID]);
+
 
     const showGroupContent = (groupName) => {
         setCurrentGroup(groupName);
     }
 
-    const showModal = () => {
+    const toggleModalDisplay = () => {
         setIsDisplayed(!isDisplayed);
     }
 
     const addToDatabase = (linkDetails) => {
         if (userID) {
-            alert('adding data..');
             db.collection(userID)
                 .doc('groups')
                 .collection(currentGroup)
@@ -65,23 +72,32 @@ function TopicContent () {
                     url: linkDetails.url
                 })
                 .then(() => {
-                    alert('data added');
+                    console.log('Data has been successfully added to database!');
+                    setGroupContent((prevValue) => {
+                        return [
+                            ...prevValue,
+                            {
+                                'title': linkDetails.title,
+                                'url': linkDetails.url
+                            }
+                        ]
+                    });
                 })
                 .catch((error) => {
                     console.error("Error writing document: ", error);
                 });
         }
         else {
-            alert('cannot add to database');
+            console.log('User is not signed in, cannot add to database.');
         }
     }
 
     return (
         <>
             <GroupPanel selectGroup={showGroupContent} />
-            { isDisplayed && <LinkModal submitData={addToDatabase} closeModal={showModal} /> }
+            { isDisplayed && <LinkModal submitData={addToDatabase} closeModal={toggleModalDisplay} /> }
             <div className="main-content">
-                <button onClick={showModal} className="group-add-button">
+                <button onClick={toggleModalDisplay} className="group-add-button">
                     <i className="fas fa-plus"></i>
                 </button>
                 {groupContent.map((link) => {
