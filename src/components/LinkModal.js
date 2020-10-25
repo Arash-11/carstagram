@@ -1,6 +1,16 @@
 import React , { useState } from 'react';
+import { db , auth } from '../Firebase';
 
 function LinkModal(props) {
+    // to determine current group
+    // const [currentGroupName, setCurrentGroupName] = useState('');
+
+    // let userID;
+    // auth.onAuthStateChanged((user) => {
+    //     if (user) userID = user.uid; // User is signed in.
+    //     else return;
+    // });
+
     const [linkDetails, setLinkDetails] = useState({
         title: '',
         url: ''
@@ -18,35 +28,59 @@ function LinkModal(props) {
                 [name]: value
             }
         });
-    }
+    } 
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert('submitted!');
+        props.submitData(linkDetails);
         closeModal();
     }
 
-    return(
-        <form className="link-modal" onSubmit={handleSubmit}>
-            <span onClick={closeModal}>X</span>
-            <label>Title</label>
-            <input 
-                type="text"
-                name="title"
-                onChange={handleChange}
-                value={linkDetails.title}
-                required
-            />
-            <label>URL</label>
-            <input 
-                type="url"
-                name="url"
-                onChange={handleChange}
-                value={linkDetails.url}
-                required
-            />
-            <button type="submit">Enter</button>
-        </form>
+    // const addToDatabase = () => {
+    //     if (currentGroupName) {
+    //         alert('adding data..');
+    //         db.collection(userID)
+    //             .doc('groups')
+    //             .collection(currentGroupName)
+    //             .add({
+    //                 title: linkDetails.title,
+    //                 url: linkDetails.url
+    //             })
+    //             .then(() => {
+    //                 alert('data added');
+    //             })
+    //             .catch((error) => {
+    //                 console.error("Error writing document: ", error);
+    //             });
+    //     }
+    //     else {
+    //         alert('cannot add to database');
+    //     }
+    // }
+
+    return (
+        <>
+            <form className="link-modal" onSubmit={handleSubmit}>
+                <span onClick={closeModal}>X</span>
+                <label>Title</label>
+                <input
+                    type="text"
+                    name="title"
+                    onChange={handleChange}
+                    value={linkDetails.title}
+                    required
+                />
+                <label>URL</label>
+                <input
+                    type="url"
+                    name="url"
+                    onChange={handleChange}
+                    value={linkDetails.url}
+                    required
+                />
+                <button type="submit">Enter</button>
+            </form>
+        </>
     );
 }
 

@@ -10,7 +10,7 @@ function GroupPanel (props) {
     // all added groups that show on left panel will be added to the 'group' array
     const [group, setGroup] = useState([]);
 
-    let contentName;
+    let groupName; // clicked group name
 
     let userID;
     auth.onAuthStateChanged((user) => {
@@ -19,17 +19,18 @@ function GroupPanel (props) {
     });
 
     useEffect(() => {
-            if (userID) { // User is signed in.
-                db.collection('users')
-                    .doc(userID)
-                    .collection('groups')
+        auth.onAuthStateChanged((user) => {
+            if (user) { // User is signed in.
+                db.collection(userID)
+                    .doc('created groups')
+                    .collection('group names')
                     .get()
                     .then(group => {
                         group.forEach(doc => {
                             setGroup(prevValue => {
                                 return [
-                                    ...prevValue, 
-                                    {'id': doc.id, ...doc.data()}
+                                    ...prevValue,
+                                    doc.data().groupName
                                 ]
                             });
                         });
@@ -38,6 +39,7 @@ function GroupPanel (props) {
                     });
             } 
             else return;
+        })
     }, [userID]);
 
     const handleChange = (event) => {
@@ -48,13 +50,26 @@ function GroupPanel (props) {
     }
 
     const addGroup = () => {
-        if (inputValue.group === '') return;
+        if (!inputValue.group) return;
         else {
-            db.collection('users')
-                .doc(userID)
+            db.collection(userID)
+                .doc('created groups')
+                .collection('group names')
+                .add({
+                    groupName: inputValue.group
+                })
+                .then(() => {
+                    console.log("Group-name document successfully written.")
+                })
+                .catch((error) => {
+                    console.error("Error writing group-name document: ", error);
+                });
+
+            db.collection(userID)
+                .doc('groups')
                 .collection(inputValue.group)
                 .add({
-                    something: ''
+                    content: ''
                 })
                 .then(() => {
                     console.log("Document successfully written!");
@@ -74,9 +89,10 @@ function GroupPanel (props) {
         }
     }
 
-    const changeContent = (event) => {
-        contentName = event.target.textContent;
-        props.changeContent(contentName);
+    const selectGroup = (event) => {
+        groupName = event.target.textContent;
+        alert('selected group is ' + groupName);
+        props.selectGroup(groupName);
     }
 
     return (
@@ -91,7 +107,7 @@ function GroupPanel (props) {
             <button onClick={addGroup} className="left-panel-add-button"><i className="fas fa-plus"></i></button>
             {group.map(item => {
                 return (
-                    <button key={group.indexOf(item)} onClick={changeContent} className="group-button">
+                    <button key={group.indexOf(item)} onClick={selectGroup} className="group-button">
                         {item}
                     </button>
                 );
