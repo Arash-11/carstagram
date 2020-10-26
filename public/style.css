@@ -21,7 +21,7 @@
 }
 
 body {
-  background: #000;
+  background: #0c0c0d;
   font-family: 'Noto Sans JP', sans-serif;
   overflow: hidden;
 }
@@ -50,14 +50,13 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  background: transparent;
-  color: #e94560;
-  border: solid 3px #240090;
+  background: #282828;
   border-radius: 15px;
 }
 
 .login-signup-form__title {
   margin: 0 auto 10%;
+  color: #5D88FA;
 }
 
 .login-signup-form__label, .login-signup-form__input,
@@ -65,11 +64,19 @@ body {
   margin-left: 16%;
 }
 
+.login-signup-form__label {
+  margin-bottom: 1.5%;
+  color: #C8C8C8;
+}
+
 .login-signup-form__input {
   width: 70%;
-  height: 8%;
-  padding: 0.5% 2%;
+  padding: 1% 2%;
   margin-bottom: 3%;
+  background: #17171a;
+  border: solid 3px #17171a;
+  border-radius: 5px;
+  color: #E0E0E0;
   font-size: 1.1em;
   font-weight: 500;
 }
@@ -79,13 +86,15 @@ body {
   padding: 2%;
   width: 70%;
   border: none;
-  background: #240090;
-  color: #fff;
+  border-radius: 5px;
+  background: #5d55fa;
+  color: #E0E0E0;
   font-size: 1.1em;
 }
 
 .login-signup-form__btn:hover {
   cursor: pointer;
+  background: #5D88FA;
 }
 
 .login-signup-form__text {
@@ -93,11 +102,12 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  color: #C8C8C8;
 }
 
 .login-signup-form__text_link {
   text-decoration: none;
-  color: #fff;
+  color: #5D88FA;
 }
 
 .nav {
@@ -107,7 +117,8 @@ body {
 .nav .nav__title {
   margin-left: 2%;
   font-size: 2em;
-  color: #e94560;
+  font-weight: 500;
+  color: #5D88FA;
 }
 
 .nav__signup-btn, .nav__login-btn {
@@ -121,7 +132,7 @@ body {
   float: right;
   margin-right: 5%;
   padding-top: 0.5%;
-  color: #e94560;
+  color: #5D88FA;
 }
 
 .nav__account-icon:hover {
@@ -131,7 +142,7 @@ body {
 .options-modal {
   position: absolute;
   right: 2%;
-  padding: 5px;
+  padding: 8px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -139,7 +150,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   z-index: 10;
-  background: #e94560;
+  background: #282828;
   border-radius: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -156,19 +167,23 @@ body {
           align-items: flex-start;
 }
 
-.options-modal button {
+.options-modal__btn {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  outline: red;
   background: transparent;
   border: none;
-  color: #fff;
+  color: #C8C8C8;
   font-size: 1.2em;
 }
 
-.options-modal button:hover {
+.options-modal__btn:hover {
   cursor: pointer;
+  color: #5D88FA;
+}
+
+.options-modal__btn:nth-child(2) {
+  margin: 5% auto;
 }
 
 .left-panel {

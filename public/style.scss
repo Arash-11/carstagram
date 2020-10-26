@@ -1,15 +1,18 @@
-// $dark_color_1: #1a1a2e;
-// $dark_color_2: #16213e;
-// $dark_color_3: #0f3460;
-// $redish_color: #e94560;
 
-$black_color: #000;
 $white_color: #fff;
-$dark_purple_1: #0C0032;
+$white_greyish_color: #E0E0E0;
+$light_greyish_color: #C8C8C8;
+$grey_color: #3A3A3C;
+$greyish_color: #282828;
+$dark_grey_1: #121212;
+$dark_grey_2: #17171a;
+$blackish_color: #0c0c0d;
+// $dark_purple_1: #0C0032;
 $dark_purple_2: #190061;
 $dark_purple_3: #240090;
 $dark_purple_4: #3500D3;
-$grayish_color: #282828;
+$light_purple: #5d55fa;
+$lighter_purple: #5D88FA;
 $redish_color: #e94560;
 
 %button-style {
@@ -32,7 +35,7 @@ $redish_color: #e94560;
 }
 
 body {
-    background: $black_color;
+    background: $blackish_color;
     font-family: 'Noto Sans JP', sans-serif;
     overflow: hidden;
 }
@@ -52,14 +55,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background: transparent;
-    color: $redish_color;
-    border: solid 3px $dark_purple_3;
+    background: $greyish_color;
     border-radius: 15px;
 }
 
 .login-signup-form__title {
     margin: 0 auto 10%;
+    color: $lighter_purple;
 }
 
 .login-signup-form__label, .login-signup-form__input, 
@@ -67,15 +69,19 @@ body {
     margin-left: 16%;
 }
 
-// .login-signup-form__label {
-//     color: $dark_purple_3;
-// }
+.login-signup-form__label {
+    margin-bottom: 1.5%;
+    color: $light_greyish_color;
+}
 
 .login-signup-form__input {
     width: 70%;
-    height: 8%;
-    padding: 0.5% 2%;
+    padding: 1% 2%;
     margin-bottom: 3%;
+    background: $dark_grey_2;
+    border: solid 3px $dark_grey_2;
+    border-radius: 5px;
+    color: $white_greyish_color;
     font-size: 1.1em;
     font-weight: 500;
 }
@@ -85,22 +91,25 @@ body {
     padding: 2%;
     width: 70%;
     border: none;
-    background: $dark_purple_3;
-    color: $white_color;
+    border-radius: 5px;
+    background: $light_purple;
+    color: $white_greyish_color;
     font-size: 1.1em;
     &:hover {
         cursor: pointer;
+        background: $lighter_purple;
     }
 }
 
 .login-signup-form__text {
     margin: 8% auto 0;
     width: fit-content;
+    color: $light_greyish_color;
 }
 
 .login-signup-form__text_link {
     text-decoration: none;
-    color: $white_color;
+    color: $lighter_purple;
 }
 
 
@@ -111,7 +120,8 @@ body {
     .nav__title {
         margin-left: 2%;
         font-size: 2em;
-        color: $redish_color;
+        font-weight: 500;
+        color: $lighter_purple;
     }
 }
 
@@ -126,7 +136,7 @@ body {
     float: right;
     margin-right: 5%;
     padding-top: 0.5%;
-    color: $redish_color;
+    color: $lighter_purple;
     &:hover {
         cursor: pointer;
     }
@@ -137,11 +147,11 @@ body {
 .options-modal {
     position: absolute;
     right: 2%;
-    padding: 5px;
+    padding: 8px;
     height: fit-content;
     width: fit-content;
     z-index: 10;
-    background: $redish_color;
+    background: $greyish_color;
     border-radius: 2px;
     display: flex;
     flex-direction: column;
@@ -149,16 +159,19 @@ body {
     align-items: flex-start;
 }
 
-.options-modal button {
+.options-modal__btn {
     appearance: none;
-    outline: red;
     background: transparent;
     border: none;
-    color: $white_color;
+    color: $light_greyish_color;
     font-size: 1.2em;
     &:hover {
         cursor: pointer;
+        color: $lighter_purple;
         // background: $dark_purple_3;
+    }
+    &:nth-child(2) {
+        margin: 5% auto;
     }
 }
 

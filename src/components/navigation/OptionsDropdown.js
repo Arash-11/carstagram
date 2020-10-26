@@ -38,9 +38,9 @@ function OptionsDropdown() {
         <>
             { isOpen && <PasswordModal closeModal={controlModalDisplay} /> }
             <div className="options-modal">
-                <button onClick={logOut}>Log out</button>
-                <button onClick={controlModalDisplay}>Change password</button>
-                <button onClick={deleteAccount}>Delete account</button>
+                <button onClick={logOut} className="options-modal__btn">Log out</button>
+                <button onClick={controlModalDisplay} className="options-modal__btn">Change password</button>
+                <button onClick={deleteAccount} className="options-modal__btn">Delete account</button>
             </div>
         </>
     );
