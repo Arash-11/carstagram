@@ -31,7 +31,7 @@ function Login() {
         const email = `${username}@organizr.com`;
         auth.signInWithEmailAndPassword(email, password)
             .then(() => {
-                alert('Sign in successful!');
+                console.log('Sign in successful!');
                 window.location.pathname = '/';
             })
             .catch(error => {
@@ -41,28 +41,30 @@ function Login() {
     }
 
     return (
-        <form className="login-join-form" onSubmit={handleSubmit}>
-            <h1>Organizr</h1>
-            <label>Username</label>
-            <input 
+        <form className="login-signup-form" onSubmit={handleSubmit}>
+            <h1 className="login-signup-form__title">Organizr</h1>
+            <label className="login-signup-form__label">Username</label>
+            <input
                 type="text"
                 name="username"
                 value={username}
                 onChange={handleChange}
+                className="login-signup-form__input"
                 required>
             </input>
-            <label>Password</label>
+            <label className="login-signup-form__label">Password</label>
             <input 
                 type="password"
                 name="password"
                 value={password}
                 onChange={handleChange}
+                className="login-signup-form__input"
                 required>
             </input>
-            <button type="submit">Login</button>
-            <p>
+            <button type="submit" className="login-signup-form__btn">Login</button>
+            <p className="login-signup-form__text">
                 Don't have an account?
-                <Link to="/signup" className="navlink">Sign up</Link>
+                <Link to="/signup" className="login-signup-form__text_link"> Sign up</Link>
             </p>
         </form>
     );

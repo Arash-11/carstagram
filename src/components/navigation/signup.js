@@ -40,37 +40,39 @@ function SignUp() {
     }
 
     return (
-        <form className="login-join-form" onSubmit={handleSubmit}>
-            <h1>Organizr</h1>
-            <label>Create Username</label>
+        <form className="login-signup-form" onSubmit={handleSubmit}>
+            <h1 className="login-signup-form__title">Organizr</h1>
+            <label className="login-signup-form__label">Create Username</label>
             <input
                 type="text"
                 name="username"
                 onChange={handleChange}
                 value={username}
-                placeholder=""
+                className="login-signup-form__input"
                 required>
             </input>
-            <label>Create Password</label>
+            <label className="login-signup-form__label">Create Password</label>
             <input 
                 type="password" 
                 name="password"
                 onChange={handleChange} 
                 value={password}
+                className="login-signup-form__input"
                 required>
             </input>
-            <label>Confirm Password</label>
+            <label className="login-signup-form__label">Confirm Password</label>
             <input 
                 type="password" 
                 name="confirmedPassword"
                 onChange={handleChange} 
                 value={confirmedPassword}
+                className="login-signup-form__input"
                 required>
             </input>
-            <button type="submit">Sign up</button>
-            <p>
+            <button type="submit" className="login-signup-form__btn">Sign up</button>
+            <p className="login-signup-form__text">
                 Have an account?
-                <Link to="/login" className="navlink">Login</Link>
+                <Link to="/login" className="login-signup-form__text_link"> Login</Link>
             </p>
         </form>
     );

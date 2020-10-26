@@ -50,8 +50,7 @@ function GroupPanel (props) {
     }
 
     const addGroup = () => {
-        if (!inputValue.group) return;
-        else {
+        if (inputValue.group && userID) {
             db.collection(userID)
                 .doc('created groups')
                 .collection('group names')
@@ -87,6 +86,19 @@ function GroupPanel (props) {
                     console.error("Error writing document: ", error);
                 });
         }
+        // when user is not signed in - this will allow user to test the website without creating an account
+        else if (inputValue.group && !userID) {
+            setGroup(prevValue => {
+                return [
+                    ...prevValue,
+                    inputValue.group
+                ]
+            });
+            setInputValue(() => {
+                return { 'group': '' }
+            });
+        }
+        else return;
     }
 
     const selectGroup = (event) => {

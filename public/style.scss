@@ -1,3 +1,17 @@
+// $dark_color_1: #1a1a2e;
+// $dark_color_2: #16213e;
+// $dark_color_3: #0f3460;
+// $redish_color: #e94560;
+
+$black_color: #000;
+$white_color: #fff;
+$dark_purple_1: #0C0032;
+$dark_purple_2: #190061;
+$dark_purple_3: #240090;
+$dark_purple_4: #3500D3;
+$grayish_color: #282828;
+$redish_color: #e94560;
+
 %button-style {
     appearance: none;
     padding: 0.2% 0.5%;
@@ -18,31 +32,101 @@
 }
 
 body {
+    background: $black_color;
     font-family: 'Noto Sans JP', sans-serif;
     overflow: hidden;
 }
 
 
-// navigation bar --------------------------------------------------------------------
-nav {
-    background: skyblue;
-    padding: 0.5% 0;
-    span {
-        margin-left: 2%;
-        font-size: 2em;
-    }
-    .signup_button, .login_button {
-        @extend %button-style;
-        float: right;
-        transform: translateY(20%);
-        margin-right: 5%;
+
+// login and registration page --------------------------------------------------------------------
+.login-signup-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3% 0;
+    height: fit-content;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: transparent;
+    color: $redish_color;
+    border: solid 3px $dark_purple_3;
+    border-radius: 15px;
+}
+
+.login-signup-form__title {
+    margin: 0 auto 10%;
+}
+
+.login-signup-form__label, .login-signup-form__input, 
+.login-signup-form__btn {
+    margin-left: 16%;
+}
+
+// .login-signup-form__label {
+//     color: $dark_purple_3;
+// }
+
+.login-signup-form__input {
+    width: 70%;
+    height: 8%;
+    padding: 0.5% 2%;
+    margin-bottom: 3%;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.login-signup-form__btn {
+    margin-top: 6%;
+    padding: 2%;
+    width: 70%;
+    border: none;
+    background: $dark_purple_3;
+    color: $white_color;
+    font-size: 1.1em;
+    &:hover {
+        cursor: pointer;
     }
 }
 
-.account_icon {
+.login-signup-form__text {
+    margin: 8% auto 0;
+    width: fit-content;
+}
+
+.login-signup-form__text_link {
+    text-decoration: none;
+    color: $white_color;
+}
+
+
+
+// navigation bar --------------------------------------------------------------------
+.nav {
+    padding: 0.5% 0;
+    .nav__title {
+        margin-left: 2%;
+        font-size: 2em;
+        color: $redish_color;
+    }
+}
+
+.nav__signup-btn, .nav__login-btn {
+    @extend %button-style;
+    float: right;
+    transform: translateY(20%);
+    margin-right: 5%;
+}
+
+.nav__account-icon {
     float: right;
     margin-right: 5%;
     padding-top: 0.5%;
+    color: $redish_color;
     &:hover {
         cursor: pointer;
     }
@@ -57,12 +141,12 @@ nav {
     height: fit-content;
     width: fit-content;
     z-index: 10;
-    background: lightblue;
+    background: $redish_color;
+    border-radius: 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    color: white;
 }
 
 .options-modal button {
@@ -70,55 +154,11 @@ nav {
     outline: red;
     background: transparent;
     border: none;
+    color: $white_color;
     font-size: 1.2em;
     &:hover {
         cursor: pointer;
-        background: yellow;
-    }
-}
-
-
-
-// login and registration page --------------------------------------------------------------------
-.login-join-form {
-    background: skyblue;
-    margin: 5% auto 0;
-    padding-left: 10%;
-    height: 70vh;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    h1 {
-        margin-top: -10%;
-        margin-bottom: 10%;
-    }
-}
-
-.login-join-form input {
-    width: 70%;
-    height: 7%;
-    padding: 1% 2%;
-    margin-bottom: 3%;
-}
-
-.login-join-form button {
-    margin-top: 4%;
-    width: 70%;
-    height: 7%;
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.login-join-form p {
-    margin-top: 9%;
-    width: 70%;
-    .navlink {
-        margin-left: 2%;
-        text-decoration: none;
-        color: red;
+        // background: $dark_purple_3;
     }
 }
 
@@ -251,5 +291,3 @@ nav {
     padding-left: 5%;
 }
 
-
-// design the login & register page differently

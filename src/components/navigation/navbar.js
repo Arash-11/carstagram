@@ -21,18 +21,18 @@ function Navbar() {
     }
 
     return (
-        <nav>
-            <span>Organizr</span>
+        <nav className="nav">
+            <span className="nav__title">Organizr</span>
             {isLoggedIn
                 ? 
                 <>
                     { isDisplayed && <OptionsDropdown /> }
-                    <i className="fas fa-user-circle fa-2x account_icon" onClick={showOptions}></i>
+                    <i className="fas fa-user-circle fa-2x nav__account-icon" onClick={showOptions}></i>
                 </>
                 :
                 <>
-                    <Link to="/signup"><button className="signup_button">Sign Up</button></Link>
-                    <Link to="/login"><button className="login_button">Login</button></Link>
+                    <Link to="/signup"><button className="nav__signup-btn">Sign Up</button></Link>
+                    <Link to="/login"><button className="nav__login-btn">Login</button></Link>
                 </>
             }
         </nav>

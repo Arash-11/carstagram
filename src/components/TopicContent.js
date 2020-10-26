@@ -50,7 +50,7 @@ function TopicContent () {
             setGroupContent([]);
         }
         return removePreviousContent();
-        
+
     }, [currentGroup, userID]);
 
 
@@ -62,7 +62,7 @@ function TopicContent () {
         setIsDisplayed(!isDisplayed);
     }
 
-    const addToDatabase = (linkDetails) => {
+    const submitLinkDetails = (linkDetails) => {
         if (userID) {
             db.collection(userID)
                 .doc('groups')
@@ -87,15 +87,24 @@ function TopicContent () {
                     console.error("Error writing document: ", error);
                 });
         }
+        // when user is not signed in - this will allow user to test the website without creating an account
         else {
-            console.log('User is not signed in, cannot add to database.');
+            setGroupContent((prevValue) => {
+                return [
+                    ...prevValue,
+                    {
+                        'title': linkDetails.title,
+                        'url': linkDetails.url
+                    }
+                ]
+            });
         }
     }
 
     return (
         <>
             <GroupPanel selectGroup={showGroupContent} />
-            { isDisplayed && <LinkModal submitData={addToDatabase} closeModal={toggleModalDisplay} /> }
+            { isDisplayed && <LinkModal submitData={submitLinkDetails} closeModal={toggleModalDisplay} /> }
             <div className="main-content">
                 <button onClick={toggleModalDisplay} className="group-add-button">
                     <i className="fas fa-plus"></i>
