@@ -15,6 +15,12 @@ $light_purple: #5d55fa;
 $lighter_purple: #5D88FA;
 $redish_color: #e94560;
 
+%outline-style {
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: $lighter_purple;
+}
+
 %button-style {
     appearance: none;
     padding: 0.2% 0.5%;
@@ -170,6 +176,9 @@ body {
         cursor: pointer;
         color: $lighter_purple;
     }
+    &:focus {
+        @extend %outline-style;
+    }
     &:nth-child(2) {
         margin: 5% auto;
     }
@@ -182,9 +191,9 @@ body {
     position: absolute;
     bottom: 3%;
     left: 1%;
-    padding: 1% 2%;
+    padding: 1% 0;
     background: $greyish_color;
-    border-radius: 10px;
+    border-radius: 7px;
     height: 85vh;
     width: 20vw;
     overflow-y: auto;
@@ -195,16 +204,29 @@ body {
     appearance: none;
     display: inline-block;
     width: 100%;
-    padding: 2% 0;
-    margin-bottom: 5%;
-    border: solid 2px $light_purple;
-    border-radius: 50px;
+    padding: 3% 0 3% 8%;
+    margin-bottom: 3%;
+    border: none;
     background: transparent;
     color: $light_greyish_color;
-    text-align: center;
+    text-align: left;
     font-size: 1.2em;
+    i {
+        visibility: hidden;
+        float: right;
+        margin-right: 7%;
+        font-size: 0.9em;
+    }
     &:hover {
         cursor: pointer;
+        background: $lighter_purple;
+        color: $white_greyish_color;
+        i {
+            visibility: visible;
+        }
+    }
+    &:focus {
+        @extend %outline-style;
     }
 }
 
@@ -212,24 +234,27 @@ body {
     appearance: none;
     position: absolute;
     bottom: 0;
-    left: 4%;
+    left: 7%;
     display: inline-block;
-    width: 80%;
+    width: 75%;
     padding: 2%;
     margin-bottom: 5%;
     background: $dark_grey_2;
     border: solid 3px $dark_grey_2;
     border-radius: 5px;
     color: $white_greyish_color;
+    &:focus {
+        @extend %outline-style;
+    }
 }
 
 .left-panel__add-button {
     appearance: none;
     position: absolute;
-    bottom: 0.5%;
-    right: -1.5%;
+    bottom: 0.3%;
+    right: 1%;
     display: inline-block;
-    width: 20%;
+    width: 15%;
     padding: 2% 0;
     margin-bottom: 5%;
     border: none;
@@ -239,40 +264,67 @@ body {
     // z-index: 10;
     &:hover {
         cursor: pointer;
+        color: $lighter_purple;
+    }
+    &:focus {
+        @extend %outline-style;
     }
     i {
-        transform: scale(1.5);
+        font-size: 1.4em;
     }
 }
 
 
 
 // Mainpage right panel --------------------------------------------------------------------
-.main-content {
+.topic-content {
     position: absolute;
-    right: 0;
-    width: 80vw;
-    height: 100vh;
+    right: 1%;
+    bottom: 3%;
+    width: 77vw;
+    height: 85vh;
     padding: 1%;
-    color: red;
     font-size: 1.5em;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.group-add-button {
+.topic-content__add-button {
     appearance: none;
     display: inline-block;
-    position: relative;
-    left: 90%;
-    width: 5%;
+    position: absolute;
+    right: 5%;
+    bottom: 3%;
+    width: 3.5vw;
+    height: 3.5vw;
     padding: 5px 0;
-    margin-bottom: 5%;
     border: none;
-    background: rgb(203, 209, 214);
+    border-radius: 50%;
+    background: $light_purple;
+    color: $white_greyish_color;
+    font-size: 1em;
     text-align: center;
     &:hover {
         cursor: pointer;
+        background: $lighter_purple;
+    }
+    &:focus {
+        @extend %outline-style;
+    }
+}
+
+.topic-content__link {
+    display: inline-block;
+    margin: 0 1.5% 2%;
+    padding: 1%;
+    // background: $grey_color;
+    border-radius: 5px;
+    a {
+        text-decoration: none;
+        color: $light_purple;
+    }
+    &:hover {
+        background: $grey_color;
     }
 }
 

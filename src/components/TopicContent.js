@@ -105,17 +105,17 @@ function TopicContent () {
         <>
             <GroupPanel selectGroup={showGroupContent} />
             { isDisplayed && <LinkModal submitData={submitLinkDetails} closeModal={toggleModalDisplay} /> }
-            <div className="main-content">
-                <button onClick={toggleModalDisplay} className="group-add-button">
-                    <i className="fas fa-plus"></i>
-                </button>
+            <div className="topic-content">
                 {groupContent.map((link) => {
                     return (
-                        <div key={groupContent.indexOf(link)} className="link-content">
+                        <div key={groupContent.indexOf(link)} className="topic-content__link">
                             <a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
                         </div>
                     );
                 })}
+                <button onClick={toggleModalDisplay} className="topic-content__add-button">
+                    <i className="fas fa-plus"></i>
+                </button>
             </div>
         </>
     );

@@ -113,6 +113,7 @@ function GroupPanel (props) {
                     <button key={group.indexOf(item)} onClick={selectGroup} 
                     className="left-panel__select-button">
                         {item}
+                        <i class="fas fa-minus-circle"></i>
                     </button>
                 );
             })}
