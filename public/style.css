@@ -111,6 +111,7 @@ body {
 }
 
 .nav {
+  background: #282828;
   padding: 0.5% 0;
 }
 
@@ -188,28 +189,61 @@ body {
 
 .left-panel {
   position: absolute;
-  left: 0;
-  background: lightgreen;
-  height: 100vh;
+  bottom: 3%;
+  left: 1%;
+  padding: 1% 2%;
+  background: #282828;
+  border-radius: 10px;
+  height: 85vh;
   width: 20vw;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.left-panel input {
+.left-panel__select-button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   display: inline-block;
-  width: 80%;
-  padding: 2%;
+  width: 100%;
+  padding: 2% 0;
   margin-bottom: 5%;
-  border: none;
+  border: solid 2px #5d55fa;
+  border-radius: 50px;
+  background: transparent;
+  color: #C8C8C8;
+  text-align: center;
+  font-size: 1.2em;
 }
 
-.left-panel-add-button {
+.left-panel__select-button:hover {
+  cursor: pointer;
+}
+
+.left-panel__input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  position: absolute;
+  bottom: 0;
+  left: 4%;
+  display: inline-block;
+  width: 80%;
+  padding: 2%;
+  margin-bottom: 5%;
+  background: #17171a;
+  border: solid 3px #17171a;
+  border-radius: 5px;
+  color: #E0E0E0;
+}
+
+.left-panel__add-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+  bottom: 0.5%;
+  right: -1.5%;
   display: inline-block;
   width: 20%;
   padding: 2% 0;
@@ -217,27 +251,16 @@ body {
   border: none;
   background: transparent;
   text-align: center;
+  color: #5d55fa;
 }
 
-.left-panel-add-button:hover {
+.left-panel__add-button:hover {
   cursor: pointer;
 }
 
-.group-button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  display: inline-block;
-  width: 100%;
-  padding: 2% 0;
-  border: none;
-  background: transparent;
-  text-align: center;
-  font-size: 1.2em;
-}
-
-.group-button:hover {
-  cursor: pointer;
+.left-panel__add-button i {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 
 .main-content {
@@ -249,6 +272,7 @@ body {
   color: red;
   font-size: 1.5em;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .group-add-button {

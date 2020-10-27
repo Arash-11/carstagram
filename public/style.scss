@@ -116,6 +116,7 @@ body {
 
 // navigation bar --------------------------------------------------------------------
 .nav {
+    background: $greyish_color;
     padding: 0.5% 0;
     .nav__title {
         margin-left: 2%;
@@ -168,7 +169,6 @@ body {
     &:hover {
         cursor: pointer;
         color: $lighter_purple;
-        // background: $dark_purple_3;
     }
     &:nth-child(2) {
         margin: 5% auto;
@@ -180,24 +180,54 @@ body {
 // Mainpage left panel --------------------------------------------------------------------
 .left-panel {
     position: absolute;
-    left: 0;
-    background: lightgreen;
-    height: 100vh;
+    bottom: 3%;
+    left: 1%;
+    padding: 1% 2%;
+    background: $greyish_color;
+    border-radius: 10px;
+    height: 85vh;
     width: 20vw;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.left-panel input {
+.left-panel__select-button {
     appearance: none;
+    display: inline-block;
+    width: 100%;
+    padding: 2% 0;
+    margin-bottom: 5%;
+    border: solid 2px $light_purple;
+    border-radius: 50px;
+    background: transparent;
+    color: $light_greyish_color;
+    text-align: center;
+    font-size: 1.2em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.left-panel__input {
+    appearance: none;
+    position: absolute;
+    bottom: 0;
+    left: 4%;
     display: inline-block;
     width: 80%;
     padding: 2%;
     margin-bottom: 5%;
-    border: none;
+    background: $dark_grey_2;
+    border: solid 3px $dark_grey_2;
+    border-radius: 5px;
+    color: $white_greyish_color;
 }
 
-.left-panel-add-button {
+.left-panel__add-button {
     appearance: none;
+    position: absolute;
+    bottom: 0.5%;
+    right: -1.5%;
     display: inline-block;
     width: 20%;
     padding: 2% 0;
@@ -205,22 +235,13 @@ body {
     border: none;
     background: transparent;
     text-align: center;
+    color: $light_purple;
+    // z-index: 10;
     &:hover {
         cursor: pointer;
     }
-}
-
-.group-button {
-    appearance: none;
-    display: inline-block;
-    width: 100%;
-    padding: 2% 0;
-    border: none;
-    background: transparent;
-    text-align: center;
-    font-size: 1.2em;
-    &:hover {
-        cursor: pointer;
+    i {
+        transform: scale(1.5);
     }
 }
 
@@ -236,6 +257,7 @@ body {
     color: red;
     font-size: 1.5em;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .group-add-button {

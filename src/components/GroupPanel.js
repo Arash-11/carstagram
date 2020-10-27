@@ -108,21 +108,25 @@ function GroupPanel (props) {
 
     return (
         <div className="left-panel">
-            <input 
-                type="text"
-                name="group"
-                placeholder="Create group.."
-                value={inputValue.group}
-                onChange={handleChange}
-            />
-            <button onClick={addGroup} className="left-panel-add-button"><i className="fas fa-plus"></i></button>
             {group.map(item => {
                 return (
-                    <button key={group.indexOf(item)} onClick={selectGroup} className="group-button">
+                    <button key={group.indexOf(item)} onClick={selectGroup} 
+                    className="left-panel__select-button">
                         {item}
                     </button>
                 );
             })}
+            <input 
+                type="text"
+                name="group"
+                placeholder="Create group..."
+                value={inputValue.group}
+                onChange={handleChange}
+                className="left-panel__input"
+            />
+            <button onClick={addGroup} className="left-panel__add-button">
+                <i className="fas fa-plus"></i>
+            </button>
         </div>
     );
 }
