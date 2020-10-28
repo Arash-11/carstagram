@@ -1,4 +1,4 @@
-.options-modal__btn:focus, .left-panel__select-button:focus, .left-panel__input:focus, .left-panel__add-button:focus, .topic-content__add-button:focus {
+.nav__signup-btn:focus, .nav__login-btn:focus, .options-modal__btn:focus, .left-panel__select-button:focus, .left-panel__input:focus, .left-panel__add-button:focus, .topic-content__add-button:focus {
   outline-style: solid;
   outline-width: 2px;
   outline-color: #5D88FA;
@@ -42,7 +42,7 @@
   font-weight: 500;
 }
 
-.login-signup-form__btn, .password-modal__submit-btn, .link-modal__submit-btn {
+.login-signup-form__btn, .nav__signup-btn, .nav__login-btn, .password-modal__submit-btn, .link-modal__submit-btn {
   margin-top: 6%;
   padding: 2%;
   border: none;
@@ -52,24 +52,9 @@
   font-size: 1.1em;
 }
 
-.login-signup-form__btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
+.login-signup-form__btn:hover, .nav__signup-btn:hover, .nav__login-btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
   cursor: pointer;
   background: #5D88FA;
-}
-
-.nav__signup-btn, .nav__login-btn {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  padding: 0.2% 0.5%;
-  background: lightgray;
-  border: solid 2px lightgray;
-  border-radius: 3px;
-  font-size: 1.2em;
-}
-
-.nav__signup-btn:hover, .nav__login-btn:hover {
-  cursor: pointer;
 }
 
 * {
@@ -138,6 +123,8 @@ body {
 }
 
 .nav__signup-btn, .nav__login-btn {
+  margin-top: 0;
+  padding: 0.5%;
   float: right;
   -webkit-transform: translateY(20%);
           transform: translateY(20%);
@@ -165,7 +152,7 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  z-index: 10;
+  z-index: 1;
   background: #282828;
   border-radius: 2px;
   display: -webkit-box;
@@ -230,13 +217,6 @@ body {
   font-size: 1.2em;
 }
 
-.left-panel__select-button i {
-  visibility: hidden;
-  float: right;
-  margin-right: 7%;
-  font-size: 0.9em;
-}
-
 .left-panel__select-button:hover {
   cursor: pointer;
   background: #5D88FA;
@@ -245,6 +225,13 @@ body {
 
 .left-panel__select-button:hover i {
   visibility: visible;
+}
+
+.left-panel__select-button__icon {
+  visibility: hidden;
+  float: right;
+  margin-right: 7%;
+  font-size: 0.9em;
 }
 
 .left-panel__input {
@@ -286,7 +273,7 @@ body {
   color: #5D88FA;
 }
 
-.left-panel__add-button i {
+.left-panel__add-button__icon {
   font-size: 1.4em;
 }
 
@@ -331,6 +318,7 @@ body {
   margin: 0 1.5% 2%;
   padding: 1%;
   border-radius: 5px;
+  background: #282828;
 }
 
 .topic-content__link a {
@@ -345,6 +333,7 @@ body {
 .password-modal, .link-modal {
   width: 35%;
   background: #282828;
+  z-index: 2;
 }
 
 .password-modal__close-btn, .link-modal__close-btn {

@@ -58,18 +58,7 @@ function GroupPanel (props) {
                     groupName: inputValue.group
                 })
                 .then(() => {
-                    console.log("Group-name document successfully written.")
-                })
-                .catch((error) => {
-                    console.error("Error writing group-name document: ", error);
-                });
-
-            db.collection(userID)
-                .doc('groups')
-                .collection(inputValue.group)
-                .add({})
-                .then(() => {
-                    console.log("Document successfully written!");
+                    console.log("Group-name document successfully written.");
                     setGroup(prevValue => {
                         return [
                             ...prevValue,
@@ -81,7 +70,7 @@ function GroupPanel (props) {
                     });
                 })
                 .catch((error) => {
-                    console.error("Error writing document: ", error);
+                    console.error("Error writing group-name document: ", error);
                 });
         }
         // when user is not signed in - this will allow user to test the website without creating an account
@@ -111,7 +100,7 @@ function GroupPanel (props) {
                     <button key={group.indexOf(item)} onClick={selectGroup} 
                     className="left-panel__select-button">
                         {item}
-                        <i class="fas fa-minus-circle"></i>
+                        <i className="fas fa-minus-circle left-panel__select-button__icon"></i>
                     </button>
                 );
             })}
@@ -124,7 +113,7 @@ function GroupPanel (props) {
                 className="left-panel__input"
             />
             <button onClick={addGroup} className="left-panel__add-button">
-                <i className="fas fa-plus"></i>
+                <i className="fas fa-plus left-panel__add-button__icon"></i>
             </button>
         </div>
     );

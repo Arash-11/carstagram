@@ -147,10 +147,15 @@ body {
 }
 
 .nav__signup-btn, .nav__login-btn {
-    @extend %button-style;
+    @extend %submit-btn;
+    margin-top: 0;
+    padding: 0.5%;
     float: right;
     transform: translateY(20%);
     margin-right: 5%;
+    &:focus {
+        @extend %outline-style;
+    }
 }
 
 .nav__account-icon {
@@ -171,7 +176,7 @@ body {
     padding: 8px;
     height: fit-content;
     width: fit-content;
-    z-index: 10;
+    z-index: 1;
     background: $greyish_color;
     border-radius: 2px;
     display: flex;
@@ -225,12 +230,6 @@ body {
     color: $light_greyish_color;
     text-align: left;
     font-size: 1.2em;
-    i {
-        visibility: hidden;
-        float: right;
-        margin-right: 7%;
-        font-size: 0.9em;
-    }
     &:hover {
         cursor: pointer;
         background: $lighter_purple;
@@ -242,6 +241,13 @@ body {
     &:focus {
         @extend %outline-style;
     }
+}
+
+.left-panel__select-button__icon {
+    visibility: hidden;
+    float: right;
+    margin-right: 7%;
+    font-size: 0.9em;
 }
 
 .left-panel__input {
@@ -275,7 +281,6 @@ body {
     background: transparent;
     text-align: center;
     color: $light_purple;
-    // z-index: 10;
     &:hover {
         cursor: pointer;
         color: $lighter_purple;
@@ -283,9 +288,10 @@ body {
     &:focus {
         @extend %outline-style;
     }
-    i {
-        font-size: 1.4em;
-    }
+}
+
+.left-panel__add-button__icon {
+    font-size: 1.4em;
 }
 
 
@@ -332,6 +338,7 @@ body {
     margin: 0 1.5% 2%;
     padding: 1%;
     border-radius: 5px;
+    background: $greyish_color;
     a {
         text-decoration: none;
         color: $light_purple;
@@ -348,6 +355,7 @@ body {
     @extend %centered-form-layout;
     width: 35%;
     background: $greyish_color;
+    z-index: 2;
 }
 
 .password-modal__close-btn, .link-modal__close-btn {

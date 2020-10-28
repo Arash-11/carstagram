@@ -30,7 +30,7 @@ function LinkModal(props) {
         <>
             <form className="link-modal" onSubmit={handleSubmit}>
                 <span onClick={closeModal} className="link-modal__close-btn">
-                    <i class="fas fa-times"></i>
+                    <i className="fas fa-times"></i>
                 </span>
                 <label className="link-modal__label">Title</label>
                 <input
