@@ -4,6 +4,59 @@
   outline-color: #5D88FA;
 }
 
+.login-signup-form, .password-modal, .link-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 3% 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-radius: 15px;
+}
+
+.login-signup-form__input, .password-modal__input, .link-modal__input {
+  padding: 1% 2%;
+  margin-bottom: 3%;
+  background: #17171a;
+  border: solid 3px #17171a;
+  border-radius: 5px;
+  color: #E0E0E0;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.login-signup-form__btn, .password-modal__submit-btn, .link-modal__submit-btn {
+  margin-top: 6%;
+  padding: 2%;
+  border: none;
+  border-radius: 5px;
+  background: #5d55fa;
+  color: #E0E0E0;
+  font-size: 1.1em;
+}
+
+.login-signup-form__btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
+  cursor: pointer;
+  background: #5D88FA;
+}
+
 .nav__signup-btn, .nav__login-btn {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -33,31 +86,7 @@ body {
 }
 
 .login-signup-form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  padding: 3% 0;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   background: #282828;
-  border-radius: 15px;
 }
 
 .login-signup-form__title {
@@ -77,30 +106,10 @@ body {
 
 .login-signup-form__input {
   width: 70%;
-  padding: 1% 2%;
-  margin-bottom: 3%;
-  background: #17171a;
-  border: solid 3px #17171a;
-  border-radius: 5px;
-  color: #E0E0E0;
-  font-size: 1.1em;
-  font-weight: 500;
 }
 
 .login-signup-form__btn {
-  margin-top: 6%;
-  padding: 2%;
   width: 70%;
-  border: none;
-  border-radius: 5px;
-  background: #5d55fa;
-  color: #E0E0E0;
-  font-size: 1.1em;
-}
-
-.login-signup-form__btn:hover {
-  cursor: pointer;
-  background: #5D88FA;
 }
 
 .login-signup-form__text {
@@ -261,7 +270,7 @@ body {
           appearance: none;
   position: absolute;
   bottom: 0.3%;
-  right: 1%;
+  right: 2%;
   display: inline-block;
   width: 15%;
   padding: 2% 0;
@@ -334,60 +343,35 @@ body {
 }
 
 .password-modal, .link-modal {
-  position: absolute;
-  margin: 5% 20% 0;
-  height: 40vh;
-  width: 60%;
-  z-index: 10;
-  background: skyblue;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  color: white;
+  width: 35%;
+  background: #282828;
 }
 
-.password-modal span, .link-modal span {
-  color: red;
-  margin: -6% 0 0 95%;
+.password-modal__close-btn, .link-modal__close-btn {
+  color: rgba(255, 0, 0, 0.8);
+  margin: -7% 0 0 90%;
   font-size: 2em;
 }
 
-.password-modal span:hover, .link-modal span:hover {
+.password-modal__close-btn:hover, .link-modal__close-btn:hover {
   cursor: pointer;
 }
 
-.password-modal label, .password-modal input, .password-modal button {
-  margin-left: 25%;
+.password-modal__label, .password-modal__input, .password-modal__submit-btn,
+.link-modal__label, .link-modal__input, .link-modal__submit-btn {
+  margin-left: 15%;
 }
 
-.password-modal input {
-  width: 50%;
-  height: 10%;
-  padding: 1% 2%;
-  margin-bottom: 1%;
+.password-modal__label, .link-modal__label {
+  margin-bottom: 1.5%;
+  color: #C8C8C8;
 }
 
-.password-modal button, .link-modal button {
-  margin-top: 4%;
-  width: 50%;
-  height: 10%;
+.password-modal__input, .link-modal__input {
+  width: 70%;
 }
 
-.password-modal button:hover, .link-modal button:hover {
-  cursor: pointer;
-}
-
-.link-modal {
-  padding-left: 5%;
+.password-modal__submit-btn, .link-modal__submit-btn {
+  width: 70%;
 }
 /*# sourceMappingURL=style.css.map */

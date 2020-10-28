@@ -11,13 +11,11 @@ function PasswordModal(props) {
 
     const changePassword = () => {
         auth.currentUser.updatePassword(newPassword)
-            .then(function() {
-                // Update successful.
+            .then(function() { // Update successful.
                 alert("password updated successfully");
                 closeModal();
             })
-            .catch(function(error) {
-                // An error happened.
+            .catch(function(error) { // An error happened.
                 console.log(error.code, error.message);
             });
     }
@@ -44,24 +42,28 @@ function PasswordModal(props) {
 
     return (
         <form className="password-modal" onSubmit={handleSubmit}>
-            <span onClick={closeModal}>X</span>
-            <label>New password</label>
+            <span onClick={closeModal} className="password-modal__close-btn">
+                <i class="fas fa-times"></i>
+            </span>
+            <label className="password-modal__label">New password</label>
             <input 
                 type="password"
                 name="newPassword"
                 onChange={handleChange}
                 value={newPassword}
+                className="password-modal__input"
                 required
             />
-            <label>Confirm new password</label>
+            <label className="password-modal__label">Confirm new password</label>
             <input 
                 type="password"
                 name="confirmedNewPassword"
                 onChange={handleChange}
                 value={confirmedNewPassword}
+                className="password-modal__input"
                 required
             />
-            <button type="submit">Update</button>
+            <button type="submit" className="password-modal__submit-btn">Update</button>
         </form>
     );
 }

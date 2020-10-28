@@ -67,9 +67,7 @@ function GroupPanel (props) {
             db.collection(userID)
                 .doc('groups')
                 .collection(inputValue.group)
-                .add({
-                    content: ''
-                })
+                .add({})
                 .then(() => {
                     console.log("Document successfully written!");
                     setGroup(prevValue => {

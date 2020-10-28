@@ -14,12 +14,54 @@ $dark_purple_4: #3500D3;
 $light_purple: #5d55fa;
 $lighter_purple: #5D88FA;
 $redish_color: #e94560;
+$dark-red: rgba(255, 0, 0, 0.8);
 
 %outline-style {
     outline-style: solid;
     outline-width: 2px;
     outline-color: $lighter_purple;
 }
+
+%centered-form-layout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3% 0;
+    height: fit-content;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 15px;
+}
+
+%input-style {
+    padding: 1% 2%;
+    margin-bottom: 3%;
+    background: $dark_grey_2;
+    border: solid 3px $dark_grey_2;
+    border-radius: 5px;
+    color: $white_greyish_color;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+%submit-btn {
+    margin-top: 6%;
+    padding: 2%;
+    border: none;
+    border-radius: 5px;
+    background: $light_purple;
+    color: $white_greyish_color;
+    font-size: 1.1em;
+    &:hover {
+        cursor: pointer;
+        background: $lighter_purple;
+    }
+}
+
 
 %button-style {
     appearance: none;
@@ -50,19 +92,8 @@ body {
 
 // login and registration page --------------------------------------------------------------------
 .login-signup-form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 3% 0;
-    height: fit-content;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    @extend %centered-form-layout;
     background: $greyish_color;
-    border-radius: 15px;
 }
 
 .login-signup-form__title {
@@ -81,30 +112,13 @@ body {
 }
 
 .login-signup-form__input {
+    @extend %input-style;
     width: 70%;
-    padding: 1% 2%;
-    margin-bottom: 3%;
-    background: $dark_grey_2;
-    border: solid 3px $dark_grey_2;
-    border-radius: 5px;
-    color: $white_greyish_color;
-    font-size: 1.1em;
-    font-weight: 500;
 }
 
 .login-signup-form__btn {
-    margin-top: 6%;
-    padding: 2%;
+    @extend %submit-btn;
     width: 70%;
-    border: none;
-    border-radius: 5px;
-    background: $light_purple;
-    color: $white_greyish_color;
-    font-size: 1.1em;
-    &:hover {
-        cursor: pointer;
-        background: $lighter_purple;
-    }
 }
 
 .login-signup-form__text {
@@ -252,7 +266,7 @@ body {
     appearance: none;
     position: absolute;
     bottom: 0.3%;
-    right: 1%;
+    right: 2%;
     display: inline-block;
     width: 15%;
     padding: 2% 0;
@@ -317,7 +331,6 @@ body {
     display: inline-block;
     margin: 0 1.5% 2%;
     padding: 1%;
-    // background: $grey_color;
     border-radius: 5px;
     a {
         text-decoration: none;
@@ -332,49 +345,37 @@ body {
 
 // modals -----------------------------------------------------------------------------------
 .password-modal, .link-modal {
-    position: absolute;
-    margin: 5% 20% 0;
-    height: 40vh;
-    width: 60%;
-    z-index: 10;
-    background: skyblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    color: white;
+    @extend %centered-form-layout;
+    width: 35%;
+    background: $greyish_color;
 }
 
-.password-modal span, .link-modal span {
-    color: red;
-    margin: -6% 0 0 95%;
+.password-modal__close-btn, .link-modal__close-btn {
+    color: $dark-red;
+    margin: -7% 0 0 90%;
     font-size: 2em;
     &:hover {
         cursor: pointer;
     }
 }
 
-.password-modal label, .password-modal input, .password-modal button {
-    margin-left: 25%;
+.password-modal__label, .password-modal__input, .password-modal__submit-btn,
+.link-modal__label, .link-modal__input, .link-modal__submit-btn {
+    margin-left: 15%;
 }
 
-.password-modal input {
-    width: 50%;
-    height: 10%;
-    padding: 1% 2%;
-    margin-bottom: 1%;
+.password-modal__label, .link-modal__label {
+    margin-bottom: 1.5%;
+    color: $light_greyish_color;
 }
 
-.password-modal button, .link-modal button {
-    margin-top: 4%;
-    width: 50%;
-    height: 10%;
-    &:hover {
-        cursor: pointer;
-    }
+.password-modal__input, .link-modal__input {
+    @extend %input-style;
+    width: 70%;
 }
 
-.link-modal {
-    padding-left: 5%;
+.password-modal__submit-btn, .link-modal__submit-btn {
+    @extend %submit-btn;
+    width: 70%;
 }
 
