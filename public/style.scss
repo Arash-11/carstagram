@@ -138,6 +138,7 @@ body {
 .nav {
     background: $greyish_color;
     padding: 0.5% 0;
+    height: 9vh;
     .nav__title {
         margin-left: 2%;
         font-size: 2em;
@@ -208,8 +209,8 @@ body {
 // Mainpage left panel --------------------------------------------------------------------
 .left-panel {
     position: absolute;
-    bottom: 3%;
-    left: 1%;
+    bottom: 3vh;
+    left: 1.5vw;
     padding: 1% 0;
     background: $greyish_color;
     border-radius: 7px;
@@ -248,6 +249,10 @@ body {
     float: right;
     margin-right: 7%;
     font-size: 0.9em;
+    &:hover {
+        color: $redish_color;
+        transform: scale(1.1);
+    }
 }
 
 .left-panel__input {
@@ -304,7 +309,7 @@ body {
     width: 77vw;
     height: 85vh;
     padding: 1%;
-    font-size: 1.5em;
+    font-size: 1.4em;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -336,7 +341,8 @@ body {
 .topic-content__link {
     display: inline-block;
     margin: 0 1.5% 2%;
-    padding: 1%;
+    padding: 0.5% 0.5% 1.5% 1.5%;
+    max-width: 45%;
     border-radius: 5px;
     background: $greyish_color;
     a {
@@ -348,6 +354,21 @@ body {
     }
 }
 
+.topic-content__link__close-btn {
+    display: inline-block;
+    width: 97%;
+    color: $dark_grey_1;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.topic-content__link__close-btn__icon {
+    float: right;
+    &:hover {
+        color: $dark-red;
+    }
+}
 
 
 // modals -----------------------------------------------------------------------------------

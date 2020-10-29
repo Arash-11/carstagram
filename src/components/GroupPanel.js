@@ -93,6 +93,10 @@ function GroupPanel (props) {
         props.selectGroup(groupName);
     }
 
+    const deleteGroup = () => {
+        
+    }
+
     return (
         <div className="left-panel">
             {group.map(item => {
@@ -100,7 +104,7 @@ function GroupPanel (props) {
                     <button key={group.indexOf(item)} onClick={selectGroup} 
                     className="left-panel__select-button">
                         {item}
-                        <i className="fas fa-minus-circle left-panel__select-button__icon"></i>
+                        <i onClick={deleteGroup} className="fas fa-minus-circle left-panel__select-button__icon"></i>
                     </button>
                 );
             })}

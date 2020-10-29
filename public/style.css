@@ -113,6 +113,7 @@ body {
 .nav {
   background: #282828;
   padding: 0.5% 0;
+  height: 9vh;
 }
 
 .nav .nav__title {
@@ -191,8 +192,8 @@ body {
 
 .left-panel {
   position: absolute;
-  bottom: 3%;
-  left: 1%;
+  bottom: 3vh;
+  left: 1.5vw;
   padding: 1% 0;
   background: #282828;
   border-radius: 7px;
@@ -232,6 +233,12 @@ body {
   float: right;
   margin-right: 7%;
   font-size: 0.9em;
+}
+
+.left-panel__select-button__icon:hover {
+  color: #e94560;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .left-panel__input {
@@ -284,7 +291,7 @@ body {
   width: 77vw;
   height: 85vh;
   padding: 1%;
-  font-size: 1.5em;
+  font-size: 1.4em;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -316,7 +323,8 @@ body {
 .topic-content__link {
   display: inline-block;
   margin: 0 1.5% 2%;
-  padding: 1%;
+  padding: 0.5% 0.5% 1.5% 1.5%;
+  max-width: 45%;
   border-radius: 5px;
   background: #282828;
 }
@@ -328,6 +336,24 @@ body {
 
 .topic-content__link:hover {
   background: #3A3A3C;
+}
+
+.topic-content__link__close-btn {
+  display: inline-block;
+  width: 97%;
+  color: #121212;
+}
+
+.topic-content__link__close-btn:hover {
+  cursor: pointer;
+}
+
+.topic-content__link__close-btn__icon {
+  float: right;
+}
+
+.topic-content__link__close-btn__icon:hover {
+  color: rgba(255, 0, 0, 0.8);
 }
 
 .password-modal, .link-modal {

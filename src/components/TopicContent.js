@@ -101,6 +101,10 @@ function TopicContent () {
         }
     }
 
+    const deleteLink = () => {
+        alert('document deleted');
+    }
+
 
     return (
         <>
@@ -110,6 +114,9 @@ function TopicContent () {
                 {groupContent.map((link) => {
                     return (
                         <div key={groupContent.indexOf(link)} className="topic-content__link">
+                            <span onClick={deleteLink} className="topic-content__link__close-btn">
+                                <i className="fas fa-times topic-content__link__close-btn__icon"></i>
+                            </span>
                             <a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
                         </div>
                     );
