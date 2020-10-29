@@ -1,5 +1,6 @@
 import React , { useState , useEffect } from 'react';
-import GroupPanel from './GroupPanel';
+// import GroupPanel from './GroupPanel';
+import Navbar from './navigation/Navbar';
 import LinkModal from './LinkModal';
 import { db , auth } from '../Firebase';
 
@@ -108,7 +109,7 @@ function TopicContent () {
 
     return (
         <>
-            <GroupPanel selectGroup={showGroupContent} />
+            <Navbar showGroupContent={showGroupContent} />
             { isDisplayed && <LinkModal submitData={submitLinkDetails} closeModal={toggleModalDisplay} /> }
             <div className="topic-content">
                 {groupContent.map((link) => {
@@ -122,7 +123,7 @@ function TopicContent () {
                     );
                 })}
                 <button onClick={toggleModalDisplay} className="topic-content__add-button">
-                    <i className="fas fa-plus"></i>
+                    <i className="fas fa-plus topic-content__add-button__icon"></i>
                 </button>
             </div>
         </>

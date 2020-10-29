@@ -88,9 +88,9 @@ function GroupPanel (props) {
         else return;
     }
 
-    const selectGroup = (event) => {
+    const identifyGroup = (event) => {
         groupName = event.target.textContent;
-        props.selectGroup(groupName);
+        props.identifyGroup(groupName);
     }
 
     const deleteGroup = () => {
@@ -101,7 +101,7 @@ function GroupPanel (props) {
         <div className="left-panel">
             {group.map(item => {
                 return (
-                    <button key={group.indexOf(item)} onClick={selectGroup} 
+                    <button key={group.indexOf(item)} onClick={identifyGroup} 
                     className="left-panel__select-button">
                         {item}
                         <i onClick={deleteGroup} className="fas fa-minus-circle left-panel__select-button__icon"></i>
