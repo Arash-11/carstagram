@@ -1,4 +1,4 @@
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 2000px) {
 
     $white_greyish_color: #E0E0E0;
     $light_greyish_color: #C8C8C8;
@@ -11,14 +11,20 @@
     $lighter_purple: #5D88FA;
     $dark-red: rgba(255, 0, 0, 0.8);
 
-    %centered-form-layout-mobile {
+    %outline-style-large {
+        outline-style: solid;
+        outline-width: 3px;
+        outline-color: $lighter_purple;
+    }
+
+    %centered-form-layout-large {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 3% 0;
         height: fit-content;
-        width: 80%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -26,25 +32,25 @@
         border-radius: 15px;
     }
 
-    %input-style-mobile {
-        padding: 1% 2%;
-        margin-bottom: 7%;
+    %input-style-large {
+        padding: 1.5% 2%;
+        margin-bottom: 6%;
         background: $dark_grey_2;
         border: solid 3px $dark_grey_2;
         border-radius: 5px;
         color: $white_greyish_color;
-        font-size: 1em;
+        font-size: 1.7em;
         font-weight: 500;
     }
 
-    %submit-btn-mobile {
-        margin-top: 6%;
-        padding: 2%;
+    %submit-btn-large {
+        margin-top: 4%;
+        padding: 1.5%;
         border: none;
         border-radius: 5px;
         background: $light_purple;
         color: $white_greyish_color;
-        font-size: 1em;
+        font-size: 2em;
         &:hover {
             cursor: pointer;
             background: $lighter_purple;
@@ -54,12 +60,12 @@
 
     // login and registration page --------------------------------------------------------------------
     .login-signup-form {
-        @extend %centered-form-layout-mobile;
+        @extend %centered-form-layout-large;
     }
 
     .login-signup-form__title {
         margin: 0 auto 12%;
-        font-size: 1.7em;
+        font-size: 4em;
     }
 
     .login-signup-form__label, .login-signup-form__input, 
@@ -69,177 +75,143 @@
 
     .login-signup-form__label {
         margin-bottom: 2%;
-        font-size: 0.9em;
+        font-size: 1.2em;
     }
 
     .login-signup-form__input {
-        @extend %input-style-mobile;
+        @extend %input-style-large;
         width: 75%;
     }
 
     .login-signup-form__btn {
-        @extend %submit-btn-mobile;
+        @extend %submit-btn-large;
         width: 75%;
     }
 
     .login-signup-form__text {
         margin: 10% auto 5%;
         width: fit-content;
-        max-width: 75%;
-        font-size: 0.9em;
+        font-size: 2em;
     }
 
-    
+
     // navigation bar --------------------------------------------------------------------
     .nav {
-        padding: 1.5% 0 2%;
-        height: fit-content;
-    }
-
-    .nav__menu-icon {
-        display: inline-block;
-        position: relative;
-        z-index: 0;
-        margin-left: 4%;
-        font-size: 1.2em;
-        color: $lighter_purple;
+        padding: 0.7vh 0 1.5vh;
     }
 
     .nav__title {
-        margin-left: 4%;
-        font-size: 1.2em;
+        font-size: 3em;
     }
 
     .nav__signup-btn, .nav__login-btn {
+        @extend %submit-btn-large;
         margin-top: 0;
-        padding: 1%;
-        border: none;
-        border-radius: 3px;
-        font-size: 0.8em;
+        padding: 0.5%;
         float: right;
-        margin-right: 5%;
+        transform: translateY(15%);
+        &:focus {
+            @extend %outline-style-large;
+        }
     }
 
     .nav__account-icon {
-        transform: scale(0.7);
+        transform: scale(2);
     }
 
 
     // account dropdown modal --------------------------------------------------------------------------
     .options-modal__btn {
-        font-size: 0.9em;
+        font-size: 3em;
+        &:focus {
+            @extend %outline-style-large;
+        }
     }
 
 
     // Mainpage left panel --------------------------------------------------------------------
     .left-panel {
-        position: absolute;
-        top: 53%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 1% 0;
-        height: 88vh;
-        width: 95vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        border-radius: 7px;
-        z-index: 1;
+        bottom: 4%;
     }
 
     .left-panel__select-button {
-        padding: 3% 0 3% 8%;
-        margin-bottom: 3%;
-        background: $grey_color;
-        font-size: 1.2em;
+        font-size: 2.5em;
+        &:focus {
+            @extend %outline-style-large;
+        }
     }
 
     .left-panel__select-button__icon {
-        visibility: visible;
-        float: right;
-        margin-right: 7%;
-        font-size: 0.9em;
-        color: $dark_grey_1;
+        font-size: 1em;
     }
 
     .left-panel__input {
-        padding: 1.5%;
+        font-size: 2em;
+        &:focus {
+            @extend %outline-style-large;
+        }
     }
 
     .left-panel__add-button {
-        padding: 1.5% 0;
+        &:focus {
+            @extend %outline-style-large;
+        }
     }
 
     .left-panel__add-button__icon {
-        font-size: 1.3rem;
+        font-size: 3rem;
     }
 
 
     // Mainpage right panel --------------------------------------------------------------------
     .topic-content {
-        width: 97vw;
-        height: 88vh;
-        padding: 1%;
-        font-size: 0.9em;
+        font-size: 2em;
     }
 
     .topic-content__add-button {
-        right: 7%;
-        bottom: 3%;
-        width: 11vw;
-        height: 11vw;
-        padding: 5px 0;
+        &:focus {
+            @extend %outline-style-large;
+        }
     }
 
     .topic-content__add-button__icon {
-        font-size: 1.2rem;
-    }
-
-    .topic-content__link {
-        margin: 0 1.5% 2%;
-        padding: 0.5% 0.5% 1.5% 1.5%;
-        max-width: 100%;
-    }
-
-    .topic-content__link__close-btn {
-        display: inline-block;
-        width: 97%;
-        color: $dark_grey_1;
+        font-size: 2.5rem;
     }
 
 
     // modals -----------------------------------------------------------------------------------
     .password-modal, .link-modal {
-        @extend %centered-form-layout-mobile;
-        width: 80%;
+        @extend %centered-form-layout-large;
+        width: 35%;
+        background: $greyish_color;
+        z-index: 2;
     }
 
     .password-modal__close-btn, .link-modal__close-btn {
-        margin: -4% 0 0 88%;
-        font-size: 1.5em;
+        margin: -7% 0 0 92%;
+        font-size: 3em;
     }
 
     .password-modal__label, .password-modal__input, .password-modal__submit-btn,
     .link-modal__label, .link-modal__input, .link-modal__submit-btn {
-        margin-left: 10%;
+        margin-left: 15%;
     }
 
     .password-modal__label, .link-modal__label {
-        margin-bottom: 2%;
-        font-size: 0.8em;
+        margin-bottom: 1.5%;
+        font-size: 1.5em;
     }
 
     .password-modal__input, .link-modal__input {
-        @extend %input-style-mobile;
-        width: 80%;
+        @extend %input-style-large;
+        width: 70%;
     }
 
     .password-modal__submit-btn, .link-modal__submit-btn {
-        @extend %submit-btn-mobile;
-        margin: 4% auto 3%;
-        width: 80%;
+        @extend %submit-btn-large;
+        width: 70%;
     }
+
 
 
 }

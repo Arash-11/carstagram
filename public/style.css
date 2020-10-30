@@ -112,8 +112,10 @@ body {
 
 .nav {
   background: #282828;
-  padding: 0.5% 0;
-  height: 9vh;
+  padding: 0.7vh 0 1vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .nav__menu-icon {
@@ -198,12 +200,12 @@ body {
 
 .left-panel {
   position: absolute;
-  bottom: 3vh;
+  bottom: 3%;
   left: 1.5vw;
   padding: 1% 0;
   background: #282828;
   border-radius: 7px;
-  height: 85vh;
+  height: 87vh;
   width: 20vw;
   overflow-y: auto;
   overflow-x: hidden;
@@ -242,7 +244,7 @@ body {
 }
 
 .left-panel__select-button__icon:hover {
-  color: #e94560;
+  color: rgba(255, 0, 0, 0.8);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -295,7 +297,7 @@ body {
   right: 1%;
   bottom: 3%;
   width: 77vw;
-  height: 85vh;
+  height: 87vh;
   padding: 1%;
   font-size: 1.3em;
   overflow-y: auto;
@@ -317,7 +319,6 @@ body {
   border-radius: 50%;
   background: #5d55fa;
   color: #E0E0E0;
-  font-size: 1em;
   text-align: center;
 }
 
@@ -569,7 +570,6 @@ body {
     width: 11vw;
     height: 11vw;
     padding: 5px 0;
-    font-size: 1em;
   }
   .topic-content__add-button__icon {
     font-size: 1.2rem;
@@ -605,6 +605,152 @@ body {
   .password-modal__submit-btn, .link-modal__submit-btn {
     margin: 4% auto 3%;
     width: 80%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .nav__signup-btn:focus, .nav__login-btn:focus, .options-modal__btn:focus, .left-panel__select-button:focus, .left-panel__input:focus, .left-panel__add-button:focus, .topic-content__add-button:focus {
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: #5D88FA;
+  }
+  .login-signup-form, .password-modal, .link-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 3% 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    border-radius: 15px;
+  }
+  .login-signup-form__input, .password-modal__input, .link-modal__input {
+    padding: 1.5% 2%;
+    margin-bottom: 6%;
+    background: #17171a;
+    border: solid 3px #17171a;
+    border-radius: 5px;
+    color: #E0E0E0;
+    font-size: 1.7em;
+    font-weight: 500;
+  }
+  .login-signup-form__btn, .nav__signup-btn, .nav__login-btn, .password-modal__submit-btn, .link-modal__submit-btn {
+    margin-top: 4%;
+    padding: 1.5%;
+    border: none;
+    border-radius: 5px;
+    background: #5d55fa;
+    color: #E0E0E0;
+    font-size: 2em;
+  }
+  .login-signup-form__btn:hover, .nav__signup-btn:hover, .nav__login-btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
+    cursor: pointer;
+    background: #5D88FA;
+  }
+  .login-signup-form__title {
+    margin: 0 auto 12%;
+    font-size: 4em;
+  }
+  .login-signup-form__label, .login-signup-form__input,
+  .login-signup-form__btn {
+    margin-left: 12.5%;
+  }
+  .login-signup-form__label {
+    margin-bottom: 2%;
+    font-size: 1.2em;
+  }
+  .login-signup-form__input {
+    width: 75%;
+  }
+  .login-signup-form__btn {
+    width: 75%;
+  }
+  .login-signup-form__text {
+    margin: 10% auto 5%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 2em;
+  }
+  .nav {
+    padding: 0.7vh 0 1.5vh;
+  }
+  .nav__title {
+    font-size: 3em;
+  }
+  .nav__signup-btn, .nav__login-btn {
+    margin-top: 0;
+    padding: 0.5%;
+    float: right;
+    -webkit-transform: translateY(15%);
+            transform: translateY(15%);
+  }
+  .nav__account-icon {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  .options-modal__btn {
+    font-size: 3em;
+  }
+  .left-panel {
+    bottom: 4%;
+  }
+  .left-panel__select-button {
+    font-size: 2.5em;
+  }
+  .left-panel__select-button__icon {
+    font-size: 1em;
+  }
+  .left-panel__input {
+    font-size: 2em;
+  }
+  .left-panel__add-button__icon {
+    font-size: 3rem;
+  }
+  .topic-content {
+    font-size: 2em;
+  }
+  .topic-content__add-button__icon {
+    font-size: 2.5rem;
+  }
+  .password-modal, .link-modal {
+    width: 35%;
+    background: #282828;
+    z-index: 2;
+  }
+  .password-modal__close-btn, .link-modal__close-btn {
+    margin: -7% 0 0 92%;
+    font-size: 3em;
+  }
+  .password-modal__label, .password-modal__input, .password-modal__submit-btn,
+  .link-modal__label, .link-modal__input, .link-modal__submit-btn {
+    margin-left: 15%;
+  }
+  .password-modal__label, .link-modal__label {
+    margin-bottom: 1.5%;
+    font-size: 1.5em;
+  }
+  .password-modal__input, .link-modal__input {
+    width: 70%;
+  }
+  .password-modal__submit-btn, .link-modal__submit-btn {
+    width: 70%;
   }
 }
 /*# sourceMappingURL=style.css.map */

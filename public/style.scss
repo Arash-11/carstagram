@@ -1,7 +1,5 @@
 
 
-
-$white_color: #fff;
 $white_greyish_color: #E0E0E0;
 $light_greyish_color: #C8C8C8;
 $grey_color: #3A3A3C;
@@ -9,11 +7,8 @@ $greyish_color: #282828;
 $dark_grey_1: #121212;
 $dark_grey_2: #17171a;
 $blackish_color: #0c0c0d;
-$dark_purple_3: #240090;
-$dark_purple_4: #3500D3;
 $light_purple: #5d55fa;
 $lighter_purple: #5D88FA;
-$redish_color: #e94560;
 $dark-red: rgba(255, 0, 0, 0.8);
 
 %outline-style {
@@ -124,8 +119,8 @@ body {
 // navigation bar --------------------------------------------------------------------
 .nav {
     background: $greyish_color;
-    padding: 0.5% 0;
-    height: 9vh;
+    padding: 0.7vh 0 1vh;
+    height: fit-content;
 }
 
 .nav__menu-icon {
@@ -203,12 +198,12 @@ body {
 // Mainpage left panel --------------------------------------------------------------------
 .left-panel {
     position: absolute;
-    bottom: 3vh;
+    bottom: 3%;
     left: 1.5vw;
     padding: 1% 0;
     background: $greyish_color;
     border-radius: 7px;
-    height: 85vh;
+    height: 87vh;
     width: 20vw;
     overflow-y: auto;
     overflow-x: hidden;
@@ -244,7 +239,7 @@ body {
     margin-right: 7%;
     font-size: 0.9em;
     &:hover {
-        color: $redish_color;
+        color: $dark-red;
         transform: scale(1.1);
     }
 }
@@ -301,7 +296,7 @@ body {
     right: 1%;
     bottom: 3%;
     width: 77vw;
-    height: 85vh;
+    height: 87vh;
     padding: 1%;
     font-size: 1.3em;
     overflow-y: auto;
@@ -321,7 +316,6 @@ body {
     border-radius: 50%;
     background: $light_purple;
     color: $white_greyish_color;
-    font-size: 1em;
     text-align: center;
     &:hover {
         cursor: pointer;
@@ -411,3 +405,5 @@ body {
 // media queries ----------------------------------------------------------------------------
 
 @import 'mobile_style';
+
+@import 'largescreen_style';

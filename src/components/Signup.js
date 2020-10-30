@@ -34,8 +34,10 @@ function SignUp() {
         auth.createUserWithEmailAndPassword(email, password)
             .then(() => window.location.pathname = '/')
             .catch(error => {
-                console.log(error.code, error.message);
-                alert('something went wrong');
+                if (error.code === 'auth/email-already-in-use') {
+                    alert('This username is already in use.');
+                }
+                else alert('An error occurred. Please try again');
             });
     }
 
