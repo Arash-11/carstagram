@@ -1,4 +1,6 @@
 
+
+
 $white_color: #fff;
 $white_greyish_color: #E0E0E0;
 $light_greyish_color: #C8C8C8;
@@ -7,8 +9,6 @@ $greyish_color: #282828;
 $dark_grey_1: #121212;
 $dark_grey_2: #17171a;
 $blackish_color: #0c0c0d;
-// $dark_purple_1: #0C0032;
-$dark_purple_2: #190061;
 $dark_purple_3: #240090;
 $dark_purple_4: #3500D3;
 $light_purple: #5d55fa;
@@ -27,7 +27,7 @@ $dark-red: rgba(255, 0, 0, 0.8);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 3% 0;
+    padding: 2.5% 0;
     height: fit-content;
     width: 40%;
     display: flex;
@@ -39,7 +39,7 @@ $dark-red: rgba(255, 0, 0, 0.8);
 
 %input-style {
     padding: 1% 2%;
-    margin-bottom: 3%;
+    margin-bottom: 4%;
     background: $dark_grey_2;
     border: solid 3px $dark_grey_2;
     border-radius: 5px;
@@ -129,12 +129,9 @@ body {
 }
 
 .nav__menu-icon {
-    margin-left: 1.8vw;
-    font-size: 1.7em;
-    color: $lighter_purple;
-    &:hover {
-        cursor: pointer;
-    }
+    display: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
 .nav__title {
@@ -232,7 +229,7 @@ body {
         cursor: pointer;
         background: $lighter_purple;
         color: $white_greyish_color;
-        i {
+        .left-panel__select-button__icon {
             visibility: visible;
         }
     }
@@ -306,7 +303,7 @@ body {
     width: 77vw;
     height: 85vh;
     padding: 1%;
-    font-size: 1.4em;
+    font-size: 1.3em;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -409,3 +406,8 @@ body {
     width: 70%;
 }
 
+
+
+// media queries ----------------------------------------------------------------------------
+
+@import 'mobile_style';

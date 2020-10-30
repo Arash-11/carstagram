@@ -94,7 +94,7 @@ function GroupPanel (props) {
     }
 
     const deleteGroup = () => {
-        
+        alert('group deleted');
     }
 
     return (

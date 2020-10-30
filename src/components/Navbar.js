@@ -1,7 +1,7 @@
 import React, { useState , useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from '../../Firebase';
-import GroupPanel from '../GroupPanel';
+import { auth } from '../Firebase';
+import GroupPanel from './GroupPanel';
 import OptionsDropdown from './OptionsDropdown';
 
 function Navbar(props) {
@@ -35,7 +35,7 @@ function Navbar(props) {
     return (
         <>
             <nav className="nav">
-                <i onClick={togglePanelDisplay} class="fas fa-bars nav__menu-icon"></i>
+                <i onClick={togglePanelDisplay} className="fas fa-bars nav__menu-icon"></i>
                 <span className="nav__title">Organizr</span>
                 {isLoggedIn
                     ? 

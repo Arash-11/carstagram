@@ -1,6 +1,5 @@
 import React , { useState , useEffect } from 'react';
-// import GroupPanel from './GroupPanel';
-import Navbar from './navigation/Navbar';
+import Navbar from './Navbar';
 import LinkModal from './LinkModal';
 import { db , auth } from '../Firebase';
 

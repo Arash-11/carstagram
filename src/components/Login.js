@@ -1,6 +1,6 @@
 import React , { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { auth } from '../../Firebase';
+import { auth } from '../Firebase';
 
 function Login() {
     const [loginDetails, setLoginDetails] = useState({

@@ -10,7 +10,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  padding: 3% 0;
+  padding: 2.5% 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -33,7 +33,7 @@
 
 .login-signup-form__input, .password-modal__input, .link-modal__input {
   padding: 1% 2%;
-  margin-bottom: 3%;
+  margin-bottom: 4%;
   background: #17171a;
   border: solid 3px #17171a;
   border-radius: 5px;
@@ -117,13 +117,9 @@ body {
 }
 
 .nav__menu-icon {
-  margin-left: 1.8vw;
-  font-size: 1.7em;
-  color: #5D88FA;
-}
-
-.nav__menu-icon:hover {
-  cursor: pointer;
+  display: hidden;
+  position: absolute;
+  z-index: -1;
 }
 
 .nav__title {
@@ -234,7 +230,7 @@ body {
   color: #E0E0E0;
 }
 
-.left-panel__select-button:hover i {
+.left-panel__select-button:hover .left-panel__select-button__icon {
   visibility: visible;
 }
 
@@ -301,7 +297,7 @@ body {
   width: 77vw;
   height: 85vh;
   padding: 1%;
-  font-size: 1.4em;
+  font-size: 1.3em;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -402,5 +398,213 @@ body {
 
 .password-modal__submit-btn, .link-modal__submit-btn {
   width: 70%;
+}
+
+@media screen and (max-width: 800px) {
+  .login-signup-form, .password-modal, .link-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 3% 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    border-radius: 15px;
+  }
+  .login-signup-form__input, .password-modal__input, .link-modal__input {
+    padding: 1% 2%;
+    margin-bottom: 7%;
+    background: #17171a;
+    border: solid 3px #17171a;
+    border-radius: 5px;
+    color: #E0E0E0;
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .login-signup-form__btn, .password-modal__submit-btn, .link-modal__submit-btn {
+    margin-top: 6%;
+    padding: 2%;
+    border: none;
+    border-radius: 5px;
+    background: #5d55fa;
+    color: #E0E0E0;
+    font-size: 1em;
+  }
+  .login-signup-form__btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
+    cursor: pointer;
+    background: #5D88FA;
+  }
+  .login-signup-form__title {
+    margin: 0 auto 12%;
+    font-size: 1.7em;
+  }
+  .login-signup-form__label, .login-signup-form__input,
+  .login-signup-form__btn {
+    margin-left: 12.5%;
+  }
+  .login-signup-form__label {
+    margin-bottom: 2%;
+    font-size: 0.9em;
+  }
+  .login-signup-form__input {
+    width: 75%;
+  }
+  .login-signup-form__btn {
+    width: 75%;
+  }
+  .login-signup-form__text {
+    margin: 10% auto 5%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 75%;
+    font-size: 0.9em;
+  }
+  .nav {
+    padding: 1.5% 0 2%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .nav__menu-icon {
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    margin-left: 4%;
+    font-size: 1.2em;
+    color: #5D88FA;
+  }
+  .nav__title {
+    margin-left: 4%;
+    font-size: 1.2em;
+  }
+  .nav__signup-btn, .nav__login-btn {
+    margin-top: 0;
+    padding: 1%;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8em;
+    float: right;
+    margin-right: 5%;
+  }
+  .nav__account-icon {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  .options-modal__btn {
+    font-size: 0.9em;
+  }
+  .left-panel {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 1% 0;
+    height: 88vh;
+    width: 95vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    border-radius: 7px;
+    z-index: 1;
+  }
+  .left-panel__select-button {
+    padding: 3% 0 3% 8%;
+    margin-bottom: 3%;
+    background: #3A3A3C;
+    font-size: 1.2em;
+  }
+  .left-panel__select-button__icon {
+    visibility: visible;
+    float: right;
+    margin-right: 7%;
+    font-size: 0.9em;
+    color: #121212;
+  }
+  .left-panel__input {
+    padding: 1.5%;
+  }
+  .left-panel__add-button {
+    padding: 1.5% 0;
+  }
+  .left-panel__add-button__icon {
+    font-size: 1.3rem;
+  }
+  .topic-content {
+    width: 97vw;
+    height: 88vh;
+    padding: 1%;
+    font-size: 0.9em;
+  }
+  .topic-content__add-button {
+    right: 7%;
+    bottom: 3%;
+    width: 11vw;
+    height: 11vw;
+    padding: 5px 0;
+    font-size: 1em;
+  }
+  .topic-content__add-button__icon {
+    font-size: 1.2rem;
+  }
+  .topic-content__link {
+    margin: 0 1.5% 2%;
+    padding: 0.5% 0.5% 1.5% 1.5%;
+    max-width: 100%;
+  }
+  .topic-content__link__close-btn {
+    display: inline-block;
+    width: 97%;
+    color: #121212;
+  }
+  .password-modal, .link-modal {
+    width: 80%;
+  }
+  .password-modal__close-btn, .link-modal__close-btn {
+    margin: -4% 0 0 88%;
+    font-size: 1.5em;
+  }
+  .password-modal__label, .password-modal__input, .password-modal__submit-btn,
+  .link-modal__label, .link-modal__input, .link-modal__submit-btn {
+    margin-left: 10%;
+  }
+  .password-modal__label, .link-modal__label {
+    margin-bottom: 2%;
+    font-size: 0.8em;
+  }
+  .password-modal__input, .link-modal__input {
+    width: 80%;
+  }
+  .password-modal__submit-btn, .link-modal__submit-btn {
+    margin: 4% auto 3%;
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,5 @@
 import React , { useState } from 'react';
-import { auth } from '../../Firebase';
+import { auth } from '../Firebase';
 
 function PasswordModal(props) {
     const [updatedPassword, setUpdatedPassword]  = useState({

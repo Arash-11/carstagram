@@ -1,0 +1,250 @@
+@media screen and (max-width: 800px) {
+
+    $white_color: #fff;
+    $white_greyish_color: #E0E0E0;
+    $light_greyish_color: #C8C8C8;
+    $grey_color: #3A3A3C;
+    $greyish_color: #282828;
+    $dark_grey_1: #121212;
+    $dark_grey_2: #17171a;
+    $blackish_color: #0c0c0d;
+    $dark_purple_3: #240090;
+    $dark_purple_4: #3500D3;
+    $light_purple: #5d55fa;
+    $lighter_purple: #5D88FA;
+    $redish_color: #e94560;
+    $dark-red: rgba(255, 0, 0, 0.8);
+
+    %centered-form-layout-mobile {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 3% 0;
+        height: fit-content;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        border-radius: 15px;
+    }
+
+    %input-style-mobile {
+        padding: 1% 2%;
+        margin-bottom: 7%;
+        background: $dark_grey_2;
+        border: solid 3px $dark_grey_2;
+        border-radius: 5px;
+        color: $white_greyish_color;
+        font-size: 1em;
+        font-weight: 500;
+    }
+
+    %submit-btn-mobile {
+        margin-top: 6%;
+        padding: 2%;
+        border: none;
+        border-radius: 5px;
+        background: $light_purple;
+        color: $white_greyish_color;
+        font-size: 1em;
+        &:hover {
+            cursor: pointer;
+            background: $lighter_purple;
+        }
+    }
+
+
+    // login and registration page --------------------------------------------------------------------
+    .login-signup-form {
+        @extend %centered-form-layout-mobile;
+    }
+
+    .login-signup-form__title {
+        margin: 0 auto 12%;
+        font-size: 1.7em;
+    }
+
+    .login-signup-form__label, .login-signup-form__input, 
+    .login-signup-form__btn {
+        margin-left: 12.5%;
+    }
+
+    .login-signup-form__label {
+        margin-bottom: 2%;
+        font-size: 0.9em;
+    }
+
+    .login-signup-form__input {
+        @extend %input-style-mobile;
+        width: 75%;
+    }
+
+    .login-signup-form__btn {
+        @extend %submit-btn-mobile;
+        width: 75%;
+    }
+
+    .login-signup-form__text {
+        margin: 10% auto 5%;
+        width: fit-content;
+        max-width: 75%;
+        font-size: 0.9em;
+    }
+
+    
+    // navigation bar --------------------------------------------------------------------
+    .nav {
+        padding: 1.5% 0 2%;
+        height: fit-content;
+    }
+
+    .nav__menu-icon {
+        display: inline-block;
+        position: relative;
+        z-index: 0;
+        margin-left: 4%;
+        font-size: 1.2em;
+        color: $lighter_purple;
+    }
+
+    .nav__title {
+        margin-left: 4%;
+        font-size: 1.2em;
+    }
+
+    .nav__signup-btn, .nav__login-btn {
+        margin-top: 0;
+        padding: 1%;
+        border: none;
+        border-radius: 3px;
+        font-size: 0.8em;
+        float: right;
+        margin-right: 5%;
+    }
+
+    .nav__account-icon {
+        transform: scale(0.7);
+    }
+
+
+    // account dropdown modal --------------------------------------------------------------------------
+    .options-modal__btn {
+        font-size: 0.9em;
+    }
+
+
+    // Mainpage left panel --------------------------------------------------------------------
+    .left-panel {
+        position: absolute;
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1% 0;
+        height: 88vh;
+        width: 95vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-radius: 7px;
+        z-index: 1;
+    }
+
+    .left-panel__select-button {
+        padding: 3% 0 3% 8%;
+        margin-bottom: 3%;
+        background: $grey_color;
+        font-size: 1.2em;
+    }
+
+    .left-panel__select-button__icon {
+        visibility: visible;
+        float: right;
+        margin-right: 7%;
+        font-size: 0.9em;
+        color: $dark_grey_1;
+    }
+
+    .left-panel__input {
+        padding: 1.5%;
+    }
+
+    .left-panel__add-button {
+        padding: 1.5% 0;
+    }
+
+    .left-panel__add-button__icon {
+        font-size: 1.3rem;
+    }
+
+
+    // Mainpage right panel --------------------------------------------------------------------
+    .topic-content {
+        width: 97vw;
+        height: 88vh;
+        padding: 1%;
+        font-size: 0.9em;
+    }
+
+    .topic-content__add-button {
+        right: 7%;
+        bottom: 3%;
+        width: 11vw;
+        height: 11vw;
+        padding: 5px 0;
+        font-size: 1em;
+    }
+
+    .topic-content__add-button__icon {
+        font-size: 1.2rem;
+    }
+
+    .topic-content__link {
+        margin: 0 1.5% 2%;
+        padding: 0.5% 0.5% 1.5% 1.5%;
+        max-width: 100%;
+    }
+
+    .topic-content__link__close-btn {
+        display: inline-block;
+        width: 97%;
+        color: $dark_grey_1;
+    }
+
+
+    // modals -----------------------------------------------------------------------------------
+    .password-modal, .link-modal {
+        @extend %centered-form-layout-mobile;
+        width: 80%;
+    }
+
+    .password-modal__close-btn, .link-modal__close-btn {
+        margin: -4% 0 0 88%;
+        font-size: 1.5em;
+    }
+
+    .password-modal__label, .password-modal__input, .password-modal__submit-btn,
+    .link-modal__label, .link-modal__input, .link-modal__submit-btn {
+        margin-left: 10%;
+    }
+
+    .password-modal__label, .link-modal__label {
+        margin-bottom: 2%;
+        font-size: 0.8em;
+    }
+
+    .password-modal__input, .link-modal__input {
+        @extend %input-style-mobile;
+        width: 80%;
+    }
+
+    .password-modal__submit-btn, .link-modal__submit-btn {
+        @extend %submit-btn-mobile;
+        margin: 4% auto 3%;
+        width: 80%;
+    }
+
+
+}

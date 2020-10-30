@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from './components/navigation/Login';
-import SignUp from './components/navigation/Signup';
+import Login from './components/Login';
+import SignUp from './components/Signup';
 import Mainpage from './Mainpage';
 import {
   BrowserRouter as Router,
