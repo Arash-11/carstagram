@@ -43,7 +43,7 @@ function PasswordModal(props) {
     return (
         <form className="password-modal" onSubmit={handleSubmit}>
             <span onClick={closeModal} className="password-modal__close-btn">
-                <i class="fas fa-times"></i>
+                <i className="fas fa-times"></i>
             </span>
             <label className="password-modal__label">New password</label>
             <input 

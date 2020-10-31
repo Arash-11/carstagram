@@ -33,7 +33,8 @@ function TopicContent () {
                                     ...prevValue,
                                     {
                                         'title': link.data().title,
-                                        'url': link.data().url
+                                        'url': link.data().url,
+                                        'id': link.id
                                     }
                                 ]
                             });
@@ -51,7 +52,7 @@ function TopicContent () {
         }
         return removePreviousContent();
 
-    }, [currentGroup, userID]);
+    }, [userID, currentGroup]);
 
 
     const showGroupContent = (groupName) => {
@@ -71,14 +72,15 @@ function TopicContent () {
                     title: linkDetails.title,
                     url: linkDetails.url
                 })
-                .then(() => {
+                .then((doc) => {
                     console.log('Data has been successfully added to database!');
                     setGroupContent((prevValue) => {
                         return [
                             ...prevValue,
                             {
                                 'title': linkDetails.title,
-                                'url': linkDetails.url
+                                'url': linkDetails.url,
+                                'id': doc.id
                             }
                         ]
                     });
@@ -87,22 +89,32 @@ function TopicContent () {
                     console.error("Error writing document: ", error);
                 });
         }
-        // when user is not signed in - this will allow user to test the website without creating an account
-        else {
-            setGroupContent((prevValue) => {
-                return [
-                    ...prevValue,
-                    {
-                        'title': linkDetails.title,
-                        'url': linkDetails.url
-                    }
-                ]
-            });
-        }
     }
 
-    const deleteLink = () => {
-        alert('document deleted');
+    const deleteLink = (e) => {
+        const answer = window.confirm('Are you sure you want to delete this?');
+        if (answer) {
+            const linkID = e.currentTarget.id;
+            db.collection(userID)
+                .doc('groups')
+                .collection(currentGroup)
+                .doc(linkID)
+                .delete()
+                .then(() => {
+                    console.log("Document successfully deleted!");
+                    setTimeout(() => {
+                        setGroupContent(links => {
+                            return links.filter(item => {
+                                return item.id !== linkID;
+                            });
+                        });
+                    }, 500);
+                })
+                .catch((error) => {
+                    console.error("Error removing document: ", error);
+                });
+        }
+        else return;
     }
 
 
@@ -111,16 +123,18 @@ function TopicContent () {
             <Navbar showGroupContent={showGroupContent} />
             { isDisplayed && <LinkModal submitData={submitLinkDetails} closeModal={toggleModalDisplay} /> }
             <div className="topic-content">
+
                 {groupContent.map((link) => {
-                    return (
-                        <div key={groupContent.indexOf(link)} className="topic-content__link">
-                            <span onClick={deleteLink} className="topic-content__link__close-btn">
+                        return (
+                        <div key={link.id} className="topic-content__link">
+                            <span onClick={deleteLink} id={link.id} className="topic-content__link__close-btn">
                                 <i className="fas fa-times topic-content__link__close-btn__icon"></i>
                             </span>
                             <a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
                         </div>
-                    );
-                })}
+                        );
+                    })}
+
                 <button onClick={toggleModalDisplay} className="topic-content__add-button">
                     <i className="fas fa-plus topic-content__add-button__icon"></i>
                 </button>

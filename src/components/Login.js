@@ -35,8 +35,10 @@ function Login() {
                 window.location.pathname = '/';
             })
             .catch(error => {
-                console.log(error.code, error.message);
-                alert('something went wrong');
+                if (error.code === 'auth/wrong-password') {
+                    alert('Incorrect password');
+                }
+                else alert('Something went wrong. Try again.')
             });
     }
 

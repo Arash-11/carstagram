@@ -1,11 +1,12 @@
 
-
+// i can't name colors -_-
 $white_greyish_color: #E0E0E0;
 $light_greyish_color: #C8C8C8;
 $grey_color: #3A3A3C;
 $greyish_color: #282828;
 $dark_grey_1: #121212;
 $dark_grey_2: #17171a;
+$black_greyish_color: #606060;
 $blackish_color: #0c0c0d;
 $light_purple: #5d55fa;
 $lighter_purple: #5D88FA;
@@ -136,18 +137,6 @@ body {
     color: $lighter_purple;
 }
 
-.nav__signup-btn, .nav__login-btn {
-    @extend %submit-btn;
-    margin-top: 0;
-    padding: 0.5%;
-    float: right;
-    transform: translateY(20%);
-    margin-right: 5%;
-    &:focus {
-        @extend %outline-style;
-    }
-}
-
 .nav__account-icon {
     float: right;
     margin-right: 5%;
@@ -205,11 +194,25 @@ body {
     border-radius: 7px;
     height: 87vh;
     width: 20vw;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
-.left-panel__select-button {
+.group-section {
+    height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 0.4em;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $black_greyish_color;
+        border-radius: 50px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $dark_grey_1;
+    }
+}
+
+.group-section__select-button {
     appearance: none;
     display: inline-block;
     width: 100%;
@@ -224,7 +227,7 @@ body {
         cursor: pointer;
         background: $lighter_purple;
         color: $white_greyish_color;
-        .left-panel__select-button__icon {
+        .group-section__select-button__icon {
             visibility: visible;
         }
     }
@@ -233,10 +236,10 @@ body {
     }
 }
 
-.left-panel__select-button__icon {
+.group-section__select-button__icon {
     visibility: hidden;
     float: right;
-    margin-right: 7%;
+    margin-right: 10%;
     font-size: 0.9em;
     &:hover {
         color: $dark-red;
@@ -244,11 +247,12 @@ body {
     }
 }
 
-.left-panel__input {
+.input-field__input {
     appearance: none;
     position: absolute;
     bottom: 0;
     left: 7%;
+    z-index: 1;
     display: inline-block;
     width: 75%;
     padding: 2%;
@@ -262,11 +266,12 @@ body {
     }
 }
 
-.left-panel__add-button {
+.input-field__add-button {
     appearance: none;
     position: absolute;
     bottom: 0;
     right: 2%;
+    z-index: 1;
     display: inline-block;
     width: 15%;
     padding: 2% 0;
@@ -284,7 +289,7 @@ body {
     }
 }
 
-.left-panel__add-button__icon {
+.input-field__add-button__icon {
     font-size: 1.4rem;
 }
 
@@ -301,6 +306,16 @@ body {
     font-size: 1.3em;
     overflow-y: auto;
     overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 0.4em;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $black_greyish_color;
+        border-radius: 50px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $dark_grey_1;
+    }
 }
 
 .topic-content__add-button {
@@ -369,6 +384,7 @@ body {
     width: 35%;
     background: $greyish_color;
     z-index: 2;
+    box-shadow: 0 3px 10px 5px $grey_color;
 }
 
 .password-modal__close-btn, .link-modal__close-btn {

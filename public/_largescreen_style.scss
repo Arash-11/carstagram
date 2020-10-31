@@ -104,17 +104,6 @@
         font-size: 3em;
     }
 
-    .nav__signup-btn, .nav__login-btn {
-        @extend %submit-btn-large;
-        margin-top: 0;
-        padding: 0.5%;
-        float: right;
-        transform: translateY(15%);
-        &:focus {
-            @extend %outline-style-large;
-        }
-    }
-
     .nav__account-icon {
         transform: scale(2);
     }
@@ -134,31 +123,31 @@
         bottom: 4%;
     }
 
-    .left-panel__select-button {
+    .group-section__select-button {
         font-size: 2.5em;
         &:focus {
             @extend %outline-style-large;
         }
     }
 
-    .left-panel__select-button__icon {
+    .group-section__select-button__icon {
         font-size: 1em;
     }
 
-    .left-panel__input {
+    .input-field__input {
         font-size: 2em;
         &:focus {
             @extend %outline-style-large;
         }
     }
 
-    .left-panel__add-button {
+    .input-field__add-button {
         &:focus {
             @extend %outline-style-large;
         }
     }
 
-    .left-panel__add-button__icon {
+    .input-field__add-button__icon {
         font-size: 3rem;
     }
 

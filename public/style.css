@@ -1,4 +1,4 @@
-.nav__signup-btn:focus, .nav__login-btn:focus, .options-modal__btn:focus, .left-panel__select-button:focus, .left-panel__input:focus, .left-panel__add-button:focus, .topic-content__add-button:focus {
+.options-modal__btn:focus, .group-section__select-button:focus, .input-field__input:focus, .input-field__add-button:focus, .topic-content__add-button:focus {
   outline-style: solid;
   outline-width: 2px;
   outline-color: #5D88FA;
@@ -42,7 +42,7 @@
   font-weight: 500;
 }
 
-.login-signup-form__btn, .nav__signup-btn, .nav__login-btn, .password-modal__submit-btn, .link-modal__submit-btn {
+.login-signup-form__btn, .password-modal__submit-btn, .link-modal__submit-btn {
   margin-top: 6%;
   padding: 2%;
   border: none;
@@ -52,7 +52,7 @@
   font-size: 1.1em;
 }
 
-.login-signup-form__btn:hover, .nav__signup-btn:hover, .nav__login-btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
+.login-signup-form__btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
   cursor: pointer;
   background: #5D88FA;
 }
@@ -131,15 +131,6 @@ body {
   color: #5D88FA;
 }
 
-.nav__signup-btn, .nav__login-btn {
-  margin-top: 0;
-  padding: 0.5%;
-  float: right;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-  margin-right: 5%;
-}
-
 .nav__account-icon {
   float: right;
   margin-right: 5%;
@@ -207,11 +198,28 @@ body {
   border-radius: 7px;
   height: 87vh;
   width: 20vw;
+}
+
+.group-section {
+  height: 75vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.left-panel__select-button {
+.group-section::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+.group-section::-webkit-scrollbar-thumb {
+  background: #606060;
+  border-radius: 50px;
+}
+
+.group-section::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+.group-section__select-button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -226,36 +234,37 @@ body {
   font-size: 1.2em;
 }
 
-.left-panel__select-button:hover {
+.group-section__select-button:hover {
   cursor: pointer;
   background: #5D88FA;
   color: #E0E0E0;
 }
 
-.left-panel__select-button:hover .left-panel__select-button__icon {
+.group-section__select-button:hover .group-section__select-button__icon {
   visibility: visible;
 }
 
-.left-panel__select-button__icon {
+.group-section__select-button__icon {
   visibility: hidden;
   float: right;
-  margin-right: 7%;
+  margin-right: 10%;
   font-size: 0.9em;
 }
 
-.left-panel__select-button__icon:hover {
+.group-section__select-button__icon:hover {
   color: rgba(255, 0, 0, 0.8);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.left-panel__input {
+.input-field__input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   position: absolute;
   bottom: 0;
   left: 7%;
+  z-index: 1;
   display: inline-block;
   width: 75%;
   padding: 2%;
@@ -266,13 +275,14 @@ body {
   color: #E0E0E0;
 }
 
-.left-panel__add-button {
+.input-field__add-button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   position: absolute;
   bottom: 0;
   right: 2%;
+  z-index: 1;
   display: inline-block;
   width: 15%;
   padding: 2% 0;
@@ -283,12 +293,12 @@ body {
   color: #5d55fa;
 }
 
-.left-panel__add-button:hover {
+.input-field__add-button:hover {
   cursor: pointer;
   color: #5D88FA;
 }
 
-.left-panel__add-button__icon {
+.input-field__add-button__icon {
   font-size: 1.4rem;
 }
 
@@ -302,6 +312,19 @@ body {
   font-size: 1.3em;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.topic-content::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+.topic-content::-webkit-scrollbar-thumb {
+  background: #606060;
+  border-radius: 50px;
+}
+
+.topic-content::-webkit-scrollbar-track {
+  background: #121212;
 }
 
 .topic-content__add-button {
@@ -371,6 +394,8 @@ body {
   width: 35%;
   background: #282828;
   z-index: 2;
+  -webkit-box-shadow: 0 3px 10px 5px #3A3A3C;
+          box-shadow: 0 3px 10px 5px #3A3A3C;
 }
 
 .password-modal__close-btn, .link-modal__close-btn {
@@ -536,26 +561,26 @@ body {
     border-radius: 7px;
     z-index: 1;
   }
-  .left-panel__select-button {
+  .group-section__select-button {
     padding: 3% 0 3% 8%;
     margin-bottom: 3%;
     background: #3A3A3C;
     font-size: 1.2em;
   }
-  .left-panel__select-button__icon {
+  .group-section__select-button__icon {
     visibility: visible;
     float: right;
     margin-right: 7%;
     font-size: 0.9em;
     color: #121212;
   }
-  .left-panel__input {
+  .topic-content__input {
     padding: 1.5%;
   }
-  .left-panel__add-button {
+  .topic-content__add-button {
     padding: 1.5% 0;
   }
-  .left-panel__add-button__icon {
+  .topic-content__add-button__icon {
     font-size: 1.3rem;
   }
   .topic-content {
@@ -609,7 +634,7 @@ body {
 }
 
 @media screen and (min-width: 2000px) {
-  .nav__signup-btn:focus, .nav__login-btn:focus, .options-modal__btn:focus, .left-panel__select-button:focus, .left-panel__input:focus, .left-panel__add-button:focus, .topic-content__add-button:focus {
+  .nav__signup-btn:focus, .nav__login-btn:focus, .options-modal__btn:focus, .group-section__select-button:focus, .input-field__input:focus, .input-field__add-button:focus, .topic-content__add-button:focus {
     outline-style: solid;
     outline-width: 3px;
     outline-color: #5D88FA;
@@ -711,16 +736,16 @@ body {
   .left-panel {
     bottom: 4%;
   }
-  .left-panel__select-button {
+  .group-section__select-button {
     font-size: 2.5em;
   }
-  .left-panel__select-button__icon {
+  .group-section__select-button__icon {
     font-size: 1em;
   }
-  .left-panel__input {
+  .input-field__input {
     font-size: 2em;
   }
-  .left-panel__add-button__icon {
+  .input-field__add-button__icon {
     font-size: 3rem;
   }
   .topic-content {

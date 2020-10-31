@@ -110,16 +110,6 @@
         font-size: 1.2em;
     }
 
-    .nav__signup-btn, .nav__login-btn {
-        margin-top: 0;
-        padding: 1%;
-        border: none;
-        border-radius: 3px;
-        font-size: 0.8em;
-        float: right;
-        margin-right: 5%;
-    }
-
     .nav__account-icon {
         transform: scale(0.7);
     }
@@ -148,14 +138,14 @@
         z-index: 1;
     }
 
-    .left-panel__select-button {
+    .group-section__select-button {
         padding: 3% 0 3% 8%;
         margin-bottom: 3%;
         background: $grey_color;
         font-size: 1.2em;
     }
 
-    .left-panel__select-button__icon {
+    .group-section__select-button__icon {
         visibility: visible;
         float: right;
         margin-right: 7%;
@@ -163,15 +153,15 @@
         color: $dark_grey_1;
     }
 
-    .left-panel__input {
+    .topic-content__input {
         padding: 1.5%;
     }
 
-    .left-panel__add-button {
+    .topic-content__add-button {
         padding: 1.5% 0;
     }
 
-    .left-panel__add-button__icon {
+    .topic-content__add-button__icon {
         font-size: 1.3rem;
     }
 

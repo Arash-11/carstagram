@@ -37,7 +37,7 @@ function SignUp() {
                 if (error.code === 'auth/email-already-in-use') {
                     alert('This username is already in use.');
                 }
-                else alert('An error occurred. Please try again');
+                else alert('An error occurred. Try again');
             });
     }
 

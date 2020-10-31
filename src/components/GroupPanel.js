@@ -25,12 +25,15 @@ function GroupPanel (props) {
                     .doc('created groups')
                     .collection('group names')
                     .get()
-                    .then(group => {
-                        group.forEach(doc => {
+                    .then(doc => {
+                        doc.forEach(group => {
                             setGroup(prevValue => {
                                 return [
                                     ...prevValue,
-                                    doc.data().groupName
+                                    {
+                                        'groupTitle': group.data().groupName,
+                                        'id': group.id
+                                    }
                                 ]
                             });
                         });
@@ -57,12 +60,15 @@ function GroupPanel (props) {
                 .add({
                     groupName: inputValue.group
                 })
-                .then(() => {
+                .then((doc) => {
                     console.log("Group-name document successfully written.");
                     setGroup(prevValue => {
                         return [
                             ...prevValue,
-                            inputValue.group
+                            {
+                                'groupTitle': inputValue.group,
+                                'id': doc.id
+                            }
                         ]
                     });
                     setInputValue(() => {
@@ -88,36 +94,42 @@ function GroupPanel (props) {
         else return;
     }
 
-    const identifyGroup = (event) => {
+    const showCorrectGroup = (event) => {
         groupName = event.target.textContent;
-        props.identifyGroup(groupName);
+        props.showCorrectGroup(groupName);
+        // only on smaller screens, close the left GroupPanel after a group has been selected
+        if (window.innerWidth < 800) {
+            setTimeout(props.closePanel, 300);
+        }
     }
 
     const deleteGroup = () => {
-        alert('group deleted');
+        alert(`${groupName} deleted`);
     }
 
     return (
         <div className="left-panel">
-            {group.map(item => {
-                return (
-                    <button key={group.indexOf(item)} onClick={identifyGroup} 
-                    className="left-panel__select-button">
-                        {item}
-                        <i onClick={deleteGroup} className="fas fa-minus-circle left-panel__select-button__icon"></i>
-                    </button>
-                );
-            })}
+            <div className="group-section">
+                {group.map(item => {
+                    return (
+                        <button key={item.id} onClick={showCorrectGroup} 
+                        className="group-section__select-button">
+                            {item.groupTitle}
+                            <i onClick={deleteGroup} className="fas fa-minus-circle group-section__select-button__icon"></i>
+                        </button>
+                    );
+                })}
+            </div>
             <input 
                 type="text"
                 name="group"
                 placeholder="Create group..."
                 value={inputValue.group}
                 onChange={handleChange}
-                className="left-panel__input"
+                className="input-field__input"
             />
-            <button onClick={addGroup} className="left-panel__add-button">
-                <i className="fas fa-plus left-panel__add-button__icon"></i>
+            <button onClick={addGroup} className="input-field__add-button">
+                <i className="fas fa-plus input-field__add-button__icon"></i>
             </button>
         </div>
     );
