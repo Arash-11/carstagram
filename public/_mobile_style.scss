@@ -42,12 +42,12 @@
         padding: 2%;
         border: none;
         border-radius: 5px;
-        background: $light_purple;
+        background: $lighter_purple;
         color: $white_greyish_color;
         font-size: 1em;
         &:hover {
             cursor: pointer;
-            background: $lighter_purple;
+            background: $light_purple;
         }
     }
 
@@ -119,11 +119,11 @@
     .options-modal {
         position: absolute;
         right: 4%;
-        padding: 7px;
+        padding: 5px;
     }
     
     .options-modal__btn {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
 
@@ -160,7 +160,7 @@
     }
 
     .topic-content__input {
-        padding: 1.5%;
+        padding: 2%;
     }
 
     .topic-content__add-button {
