@@ -101,13 +101,13 @@
         position: relative;
         z-index: 0;
         margin-left: 4%;
-        font-size: 1.2em;
+        font-size: 1.3em;
         color: $lighter_purple;
     }
 
     .nav__title {
         margin-left: 4%;
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .nav__account-icon {
@@ -116,8 +116,14 @@
 
 
     // account dropdown modal --------------------------------------------------------------------------
+    .options-modal {
+        position: absolute;
+        right: 4%;
+        padding: 7px;
+    }
+    
     .options-modal__btn {
-        font-size: 0.9em;
+        font-size: 1.1em;
     }
 
 
@@ -177,8 +183,8 @@
     .topic-content__add-button {
         right: 7%;
         bottom: 3%;
-        width: 11vw;
-        height: 11vw;
+        width: 12vw;
+        height: 12vw;
         padding: 5px 0;
     }
 
