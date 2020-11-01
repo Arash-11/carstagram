@@ -1,3 +1,9 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4ebb2921-65ca-4a9d-a36c-ac76a4f2beac/deploy-status)](https://app.netlify.com/sites/linkorganizr/deploys)
+
+Live site: https://linkorganizr.netlify.app/
+
+![Preview image of website](https://github.com/Arash-11/organizr/blob/main/Organizr.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
