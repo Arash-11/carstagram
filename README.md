@@ -2,6 +2,8 @@
 
 Live site: https://linkorganizr.netlify.app/
 
+![Preview image of website](https://github.com/Arash-11/organizr/blob/main/Organizr.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
