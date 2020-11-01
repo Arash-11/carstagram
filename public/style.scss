@@ -154,7 +154,7 @@ body {
     right: 3%;
     padding: 8px;
     height: fit-content;
-    width: fit-content;
+    min-width: fit-content;
     z-index: 1;
     background: $greyish_color;
     border-radius: 2px;
