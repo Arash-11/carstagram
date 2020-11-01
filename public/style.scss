@@ -286,6 +286,7 @@ body {
     background: transparent;
     text-align: center;
     color: $light_purple;
+    z-index: 3;
     &:hover {
         cursor: pointer;
         color: $lighter_purple;
@@ -338,7 +339,6 @@ body {
     background: $light_purple;
     color: $white_greyish_color;
     text-align: center;
-    z-index: 1;
     &:hover {
         cursor: pointer;
         background: $lighter_purple;

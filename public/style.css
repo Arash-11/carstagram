@@ -297,6 +297,7 @@ body {
   background: transparent;
   text-align: center;
   color: #5d55fa;
+  z-index: 3;
 }
 
 .input-field__add-button:hover {
@@ -349,7 +350,6 @@ body {
   background: #5d55fa;
   color: #E0E0E0;
   text-align: center;
-  z-index: 1;
 }
 
 .topic-content__add-button:hover {
