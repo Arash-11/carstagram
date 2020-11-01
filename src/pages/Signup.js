@@ -53,10 +53,11 @@ function SignUp() {
                 className="login-signup-form__input"
                 required>
             </input>
-            <label className="login-signup-form__label">Create Password</label>
+            <label className="login-signup-form__label">Create Password (min. of 6 characters)</label>
             <input 
                 type="password" 
                 name="password"
+                // placeholder="minimum of 6 characters"
                 onChange={handleChange} 
                 value={password}
                 className="login-signup-form__input"

@@ -444,11 +444,11 @@ body {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    padding: 3% 0;
+    padding: 3% 0 2%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    width: 80%;
+    width: 90%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -479,13 +479,13 @@ body {
     padding: 2%;
     border: none;
     border-radius: 5px;
-    background: #5d55fa;
+    background: #5D88FA;
     color: #E0E0E0;
     font-size: 1em;
   }
   .login-signup-form__btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
     cursor: pointer;
-    background: #5D88FA;
+    background: #5d55fa;
   }
   .login-signup-form__title {
     margin: 0 auto 12%;
@@ -493,24 +493,24 @@ body {
   }
   .login-signup-form__label, .login-signup-form__input,
   .login-signup-form__btn {
-    margin-left: 12.5%;
+    margin-left: 10%;
   }
   .login-signup-form__label {
     margin-bottom: 2%;
     font-size: 0.9em;
   }
   .login-signup-form__input {
-    width: 75%;
+    width: 80%;
   }
   .login-signup-form__btn {
-    width: 75%;
+    width: 80%;
   }
   .login-signup-form__text {
     margin: 10% auto 5%;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    max-width: 75%;
+    max-width: 80%;
     font-size: 0.9em;
   }
   .nav {
