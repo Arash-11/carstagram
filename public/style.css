@@ -144,7 +144,7 @@ body {
 
 .options-modal {
   position: absolute;
-  right: 2%;
+  right: 3%;
   padding: 8px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -532,8 +532,8 @@ body {
     font-size: 1.2em;
   }
   .nav__account-icon {
-    -webkit-transform: scale(0.7);
-            transform: scale(0.7);
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
   }
   .options-modal__btn {
     font-size: 0.9em;
@@ -599,7 +599,7 @@ body {
     padding: 5px 0;
   }
   .topic-content__add-button__icon {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .topic-content__link {
     margin: 0 1.5% 2%;
