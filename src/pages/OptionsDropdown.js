@@ -30,8 +30,7 @@ function OptionsDropdown() {
                 }).catch(function(error) {
                     alert('Your account could not be deleted, please try again.');
                 });
-        }
-        else return;
+        } else return;
     }
 
     return (

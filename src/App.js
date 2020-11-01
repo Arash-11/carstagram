@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from './components/Login';
-import SignUp from './components/Signup';
-import TopicContent from './components/TopicContent';
+import Login from './pages/Login';
+import SignUp from './pages/Signup';
+import TopicContent from './pages/TopicContent';
 import {
   BrowserRouter as Router,
   Switch,

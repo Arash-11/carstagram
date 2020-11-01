@@ -1,4 +1,4 @@
-import React , { useState , useEffect } from 'react';
+import React , { useState , useEffect , useRef } from 'react';
 import Navbar from './Navbar';
 import LinkModal from './LinkModal';
 import { db , auth } from '../Firebase';
@@ -13,46 +13,44 @@ function TopicContent () {
     // to determine if modal to add link/URL is open or closed
     const [isDisplayed, setIsDisplayed] = useState(false);
 
-    let userID;
-    auth.onAuthStateChanged((user) => {
-        if (user) userID = user.uid; // User is signed in.
-        else return;
-    });
+    const userIDref = useRef();
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
-            if (user) {
-                db.collection(userID)
-                    .doc('groups')
-                    .collection(currentGroup)
-                    .get()
-                    .then(doc => {
-                        doc.forEach(link => {
-                            setGroupContent(prevValue => {
-                                return [
-                                    ...prevValue,
-                                    {
-                                        'title': link.data().title,
-                                        'url': link.data().url,
-                                        'id': link.id
-                                    }
-                                ]
+            if (user) { // User is signed in.
+                userIDref.current = user.uid;
+                if (userIDref.current && currentGroup) {
+                    db.collection(userIDref.current)
+                        .doc('groups')
+                        .collection(currentGroup)
+                        .get()
+                        .then((doc) => {
+                            doc.forEach((link) => {
+                                setGroupContent(prevValue => {
+                                    return [
+                                        ...prevValue,
+                                        {
+                                            'title': link.data().title,
+                                            'url': link.data().url,
+                                            'id': link.id
+                                        }
+                                    ]
+                                });
                             });
+                        }).catch((error) => {
+                            console.log("Error getting document:", error);
                         });
-                    }).catch((error) => {
-                        console.log("Error getting document:", error);
-                    });
-            }
-            else return;
+                }
+            } else {
+                window.location.pathname = '/login';
+            };
         });
-
         // cleanup function
         const removePreviousContent = () => {
             setGroupContent([]);
         }
         return removePreviousContent();
-
-    }, [userID, currentGroup]);
+    }, [currentGroup]);
 
 
     const showGroupContent = (groupName) => {
@@ -64,8 +62,8 @@ function TopicContent () {
     }
 
     const submitLinkDetails = (linkDetails) => {
-        if (userID) {
-            db.collection(userID)
+        if (userIDref.current) {
+            db.collection(userIDref.current)
                 .doc('groups')
                 .collection(currentGroup)
                 .add({
@@ -88,14 +86,14 @@ function TopicContent () {
                 .catch((error) => {
                     console.error("Error writing document: ", error);
                 });
-        }
+        } else return;
     }
 
-    const deleteLink = (e) => {
+    const deleteLink = (event) => {
         const answer = window.confirm('Are you sure you want to delete this?');
         if (answer) {
-            const linkID = e.currentTarget.id;
-            db.collection(userID)
+            const linkID = event.currentTarget.id;
+            db.collection(userIDref.current)
                 .doc('groups')
                 .collection(currentGroup)
                 .doc(linkID)
@@ -111,10 +109,9 @@ function TopicContent () {
                     }, 500);
                 })
                 .catch((error) => {
-                    console.error("Error removing document: ", error);
+                    console.error("Error removing link: ", error);
                 });
-        }
-        else return;
+        } else return;
     }
 
 
@@ -126,12 +123,12 @@ function TopicContent () {
 
                 {groupContent.map((link) => {
                         return (
-                        <div key={link.id} className="topic-content__link">
-                            <span onClick={deleteLink} id={link.id} className="topic-content__link__close-btn">
-                                <i className="fas fa-times topic-content__link__close-btn__icon"></i>
-                            </span>
-                            <a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
-                        </div>
+                            <div key={link.id} className="topic-content__link">
+                                <span onClick={deleteLink} id={link.id} className="topic-content__link__close-btn">
+                                    <i className="fas fa-times topic-content__link__close-btn__icon"></i>
+                                </span>
+                                <a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>
+                            </div>
                         );
                     })}
 

@@ -1,7 +1,7 @@
 .options-modal__btn:focus, .group-section__select-button:focus, .input-field__input:focus, .input-field__add-button:focus, .topic-content__add-button:focus {
   outline-style: solid;
   outline-width: 2px;
-  outline-color: #5D88FA;
+  outline-color: #5d55fa;
 }
 
 .login-signup-form, .password-modal, .link-modal {
@@ -202,6 +202,7 @@ body {
 
 .group-section {
   height: 75vh;
+  width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -236,7 +237,7 @@ body {
 
 .group-section__select-button:hover {
   cursor: pointer;
-  background: #5D88FA;
+  background: #5d55fa;
   color: #E0E0E0;
 }
 
@@ -247,7 +248,7 @@ body {
 .group-section__select-button__icon {
   visibility: hidden;
   float: right;
-  margin-right: 10%;
+  margin: 1% 10% 0 0;
   font-size: 0.9em;
 }
 
@@ -255,6 +256,11 @@ body {
   color: rgba(255, 0, 0, 0.8);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.highlight {
+  background: #5d55fa;
+  color: #E0E0E0;
 }
 
 .input-field__input {
@@ -332,9 +338,9 @@ body {
      -moz-appearance: none;
           appearance: none;
   display: inline-block;
-  position: absolute;
+  position: fixed;
   right: 5%;
-  bottom: 3%;
+  bottom: 4%;
   width: 3.5vw;
   height: 3.5vw;
   padding: 5px 0;
@@ -343,6 +349,7 @@ body {
   background: #5d55fa;
   color: #E0E0E0;
   text-align: center;
+  z-index: 1;
 }
 
 .topic-content__add-button:hover {
@@ -359,11 +366,15 @@ body {
   margin: 0 1.5% 2%;
   padding: 0.5% 0.5% 1.5% 1.5%;
   max-width: 45%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 5px;
   background: #282828;
 }
 
 .topic-content__link a {
+  max-width: 45%;
   text-decoration: none;
   color: #5d55fa;
 }
@@ -520,15 +531,6 @@ body {
     margin-left: 4%;
     font-size: 1.2em;
   }
-  .nav__signup-btn, .nav__login-btn {
-    margin-top: 0;
-    padding: 1%;
-    border: none;
-    border-radius: 3px;
-    font-size: 0.8em;
-    float: right;
-    margin-right: 5%;
-  }
   .nav__account-icon {
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
@@ -634,7 +636,7 @@ body {
 }
 
 @media screen and (min-width: 2000px) {
-  .nav__signup-btn:focus, .nav__login-btn:focus, .options-modal__btn:focus, .group-section__select-button:focus, .input-field__input:focus, .input-field__add-button:focus, .topic-content__add-button:focus {
+  .options-modal__btn:focus, .group-section__select-button:focus, .input-field__input:focus, .input-field__add-button:focus, .topic-content__add-button:focus {
     outline-style: solid;
     outline-width: 3px;
     outline-color: #5D88FA;
@@ -675,7 +677,7 @@ body {
     font-size: 1.7em;
     font-weight: 500;
   }
-  .login-signup-form__btn, .nav__signup-btn, .nav__login-btn, .password-modal__submit-btn, .link-modal__submit-btn {
+  .login-signup-form__btn, .password-modal__submit-btn, .link-modal__submit-btn {
     margin-top: 4%;
     padding: 1.5%;
     border: none;
@@ -684,7 +686,7 @@ body {
     color: #E0E0E0;
     font-size: 2em;
   }
-  .login-signup-form__btn:hover, .nav__signup-btn:hover, .nav__login-btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
+  .login-signup-form__btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
     cursor: pointer;
     background: #5D88FA;
   }
@@ -718,13 +720,6 @@ body {
   }
   .nav__title {
     font-size: 3em;
-  }
-  .nav__signup-btn, .nav__login-btn {
-    margin-top: 0;
-    padding: 0.5%;
-    float: right;
-    -webkit-transform: translateY(15%);
-            transform: translateY(15%);
   }
   .nav__account-icon {
     -webkit-transform: scale(2);
