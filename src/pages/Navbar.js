@@ -17,6 +17,10 @@ function Navbar(props) {
         setIsDisplayed(!isDisplayed);
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') showOptions();
+    }
+
     const selectGroup = (groupName) => {
         props.showGroupContent(groupName);
     }
@@ -26,8 +30,8 @@ function Navbar(props) {
             <nav className="nav">
                 <i onClick={togglePanelDisplay} className="fas fa-bars nav__menu-icon"></i>
                 <span className="nav__title">Organizr</span>
+                <i className="fas fa-user-circle fa-2x nav__account-icon" onClick={showOptions} onKeyDown={handleKeyDown} tabIndex="0"></i>
                 { isDisplayed && <OptionsDropdown /> }
-                <i className="fas fa-user-circle fa-2x nav__account-icon" onClick={showOptions}></i>
             </nav>
             {panelDisplay && <GroupPanel showCorrectGroup={selectGroup} closePanel={togglePanelDisplay} />}
         </>

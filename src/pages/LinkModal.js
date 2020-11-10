@@ -10,6 +10,10 @@ function LinkModal(props) {
         props.closeModal();
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') closeModal();
+    }
+
     const handleChange = (event) => {
         const {name, value} = event.target;
         setLinkDetails(prevValue => {
@@ -29,7 +33,7 @@ function LinkModal(props) {
     return (
         <>
             <form className="link-modal" onSubmit={handleSubmit}>
-                <span onClick={closeModal} className="link-modal__close-btn">
+                <span className="link-modal__close-btn" onClick={closeModal} onKeyDown={handleKeyDown} tabIndex="0">
                     <i className="fas fa-times"></i>
                 </span>
                 <label className="link-modal__label">Title</label>

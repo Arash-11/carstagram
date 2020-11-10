@@ -1,5 +1,5 @@
 
-// i can't name colors -_-
+// i'm not good at naming colors
 $white_greyish_color: #E0E0E0;
 $light_greyish_color: #C8C8C8;
 $grey_color: #3A3A3C;
@@ -8,8 +8,8 @@ $dark_grey_1: #121212;
 $dark_grey_2: #17171a;
 $black_greyish_color: #606060;
 $blackish_color: #0c0c0d;
-$light_purple: #5d55fa;
-$lighter_purple: #5D88FA;
+$light_purple: #5288DE;
+$lighter_purple: #5D9BFC;
 $dark-red: rgba(255, 0, 0, 0.8);
 
 %outline-style {
@@ -289,7 +289,7 @@ body {
     z-index: 3;
     &:hover {
         cursor: pointer;
-        color: $lighter_purple;
+        color: $light_purple;
     }
     &:focus {
         @extend %outline-style;

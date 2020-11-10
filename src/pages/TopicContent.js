@@ -114,6 +114,10 @@ function TopicContent () {
         } else return;
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') deleteLink();
+    }
+
 
     return (
         <>
@@ -124,7 +128,7 @@ function TopicContent () {
                 {groupContent.map((link) => {
                         return (
                             <div key={link.id} className="topic-content__link">
-                                <span onClick={deleteLink} id={link.id} className="topic-content__link__close-btn">
+                                <span onClick={deleteLink} onKeyDown={handleKeyDown} id={link.id} tabIndex="0" className="topic-content__link__close-btn">
                                     <i className="fas fa-times topic-content__link__close-btn__icon"></i>
                                 </span>
                                 <a href={link.url} target="_blank" rel="noopener noreferrer">{link.title}</a>

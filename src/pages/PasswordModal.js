@@ -24,6 +24,10 @@ function PasswordModal(props) {
         props.closeModal();
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') closeModal();
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault();
         if (newPassword === confirmedNewPassword) changePassword();
@@ -42,7 +46,7 @@ function PasswordModal(props) {
 
     return (
         <form className="password-modal" onSubmit={handleSubmit}>
-            <span onClick={closeModal} className="password-modal__close-btn">
+            <span className="password-modal__close-btn" onClick={closeModal} onKeyDown={handleKeyDown} tabIndex="0">
                 <i className="fas fa-times"></i>
             </span>
             <label className="password-modal__label">New password</label>

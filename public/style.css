@@ -1,7 +1,7 @@
 .options-modal__btn:focus, .group-section__select-button:focus, .input-field__input:focus, .input-field__add-button:focus, .topic-content__add-button:focus {
   outline-style: solid;
   outline-width: 2px;
-  outline-color: #5D88FA;
+  outline-color: #5D9BFC;
 }
 
 .login-signup-form, .password-modal, .link-modal {
@@ -47,14 +47,14 @@
   padding: 2%;
   border: none;
   border-radius: 5px;
-  background: #5D88FA;
+  background: #5D9BFC;
   color: #E0E0E0;
   font-size: 1.1em;
 }
 
 .login-signup-form__btn:hover, .password-modal__submit-btn:hover, .link-modal__submit-btn:hover {
   cursor: pointer;
-  background: #5d55fa;
+  background: #5288DE;
 }
 
 * {
@@ -76,7 +76,7 @@ body {
 
 .login-signup-form__title {
   margin: 0 auto 10%;
-  color: #5D88FA;
+  color: #5D9BFC;
 }
 
 .login-signup-form__label, .login-signup-form__input,
@@ -107,7 +107,7 @@ body {
 
 .login-signup-form__text_link {
   text-decoration: none;
-  color: #5D88FA;
+  color: #5D9BFC;
 }
 
 .nav {
@@ -128,14 +128,14 @@ body {
   margin-left: 2%;
   font-size: 2em;
   font-weight: 500;
-  color: #5D88FA;
+  color: #5D9BFC;
 }
 
 .nav__account-icon {
   float: right;
   margin-right: 5%;
   padding-top: 0.5%;
-  color: #5D88FA;
+  color: #5D9BFC;
 }
 
 .nav__account-icon:hover {
@@ -182,7 +182,7 @@ body {
 
 .options-modal__btn:hover {
   cursor: pointer;
-  color: #5D88FA;
+  color: #5D9BFC;
 }
 
 .options-modal__btn:nth-child(2) {
@@ -237,7 +237,7 @@ body {
 
 .group-section__select-button:hover {
   cursor: pointer;
-  background: #5D88FA;
+  background: #5D9BFC;
   color: #E0E0E0;
 }
 
@@ -259,7 +259,7 @@ body {
 }
 
 .highlight {
-  background: #5D88FA;
+  background: #5D9BFC;
   color: #E0E0E0;
 }
 
@@ -296,13 +296,13 @@ body {
   border: none;
   background: transparent;
   text-align: center;
-  color: #5D88FA;
+  color: #5D9BFC;
   z-index: 3;
 }
 
 .input-field__add-button:hover {
   cursor: pointer;
-  color: #5D88FA;
+  color: #5288DE;
 }
 
 .input-field__add-button__icon {
@@ -347,14 +347,14 @@ body {
   padding: 5px 0;
   border: none;
   border-radius: 50%;
-  background: #5D88FA;
+  background: #5D9BFC;
   color: #E0E0E0;
   text-align: center;
 }
 
 .topic-content__add-button:hover {
   cursor: pointer;
-  background: #5d55fa;
+  background: #5288DE;
 }
 
 .topic-content__add-button__icon {
@@ -376,7 +376,7 @@ body {
 .topic-content__link a {
   max-width: 45%;
   text-decoration: none;
-  color: #5D88FA;
+  color: #5D9BFC;
 }
 
 .topic-content__link:hover {
