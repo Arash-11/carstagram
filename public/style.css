@@ -545,12 +545,12 @@ body {
   }
   .left-panel {
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     padding: 1% 0;
-    height: 80vh;
+    height: 77vh;
     width: 95vw;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -581,21 +581,15 @@ body {
     font-size: 0.9em;
     color: #121212;
   }
-  .topic-content__input {
+  .input-field__input {
     padding: 2%;
-  }
-  .topic-content__add-button {
-    padding: 1.5% 0;
-  }
-  .topic-content__add-button__icon {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .topic-content {
     width: 97vw;
-    height: 80vh;
+    height: 78vh;
     padding: 1%;
     font-size: 0.9em;
-    border: solid 1px green;
   }
   .topic-content__add-button {
     right: 7%;
