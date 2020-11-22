@@ -550,7 +550,7 @@ body {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     padding: 1% 0;
-    height: 88vh;
+    height: 85vh;
     width: 95vw;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -567,6 +567,7 @@ body {
             align-items: flex-start;
     border-radius: 7px;
     z-index: 1;
+    border: solid 1px red;
   }
   .group-section__select-button {
     padding: 3% 0 3% 8%;
@@ -595,6 +596,7 @@ body {
     height: 88vh;
     padding: 1%;
     font-size: 0.9em;
+    border: solid 1px red;
   }
   .topic-content__add-button {
     right: 7%;
