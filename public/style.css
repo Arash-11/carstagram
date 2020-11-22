@@ -550,7 +550,7 @@ body {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     padding: 1% 0;
-    height: 77vh;
+    height: 78vh;
     width: 95vw;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -582,12 +582,12 @@ body {
     color: #121212;
   }
   .input-field__input {
-    padding: 2%;
-    font-size: 1.1rem;
+    padding: 1.5%;
+    font-size: 1rem;
   }
   .topic-content {
     width: 97vw;
-    height: 78vh;
+    height: 77vh;
     padding: 1%;
     font-size: 0.9em;
   }
