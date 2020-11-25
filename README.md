@@ -1,10 +1,41 @@
+# Organizr
+
+*A web application to organize your bookmarks, links, blogs, articles, videos, etc.*
+
+<br />
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4ebb2921-65ca-4a9d-a36c-ac76a4f2beac/deploy-status)](https://app.netlify.com/sites/linkorganizr/deploys)
+![Website](https://img.shields.io/website?down_color=lightgrey&down_message=down&up_color=green&up_message=up&url=https%3A%2F%2Flinkorganizr.netlify.app%2F)
+![GitHub top language](https://img.shields.io/github/languages/top/Arash-11/organizr)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Arash-11/organizr)
+![GitHub repo size](https://img.shields.io/github/repo-size/Arash-11/organizr)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Arash-11/organizr)
 
 Live site: https://linkorganizr.netlify.app/
 
 ![Preview image of website](https://github.com/Arash-11/organizr/blob/main/Organizr.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+
+## About the project
+
+Organizr is a web application that allows you to store your bookmarks, links, blogs, articles, videos, etc. and organize them by creating groups/collections. Each collection can then store links to bookmarks.
+
+I've used Firebase for the backend and also implemented authentication so that each user can save their data and access it from anywhere. The website is responsive to make sure users have a good experience using the app regardless of their device's screen size.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and has been deployed on Netlify.
+
+<br />
+
+## Technologies used
+
+- HTML / SCSS
+- ReactJS
+- Firebase
+- Cloud Firestore
+- Netlify
+
+<br />
 
 ## Available Scripts
 
