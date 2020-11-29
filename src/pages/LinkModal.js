@@ -31,7 +31,7 @@ function LinkModal(props) {
     }
 
     return (
-        <>
+        <div className="overlay">
             <form className="link-modal" onSubmit={handleSubmit}>
                 <span className="link-modal__close-btn" onClick={closeModal} onKeyDown={handleKeyDown} tabIndex="0">
                     <i className="fas fa-times"></i>
@@ -56,7 +56,7 @@ function LinkModal(props) {
                 />
                 <button type="submit" className="link-modal__submit-btn">Enter</button>
             </form>
-        </>
+        </div>
     );
 }
 

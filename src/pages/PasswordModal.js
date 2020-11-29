@@ -45,30 +45,32 @@ function PasswordModal(props) {
     }
 
     return (
-        <form className="password-modal" onSubmit={handleSubmit}>
-            <span className="password-modal__close-btn" onClick={closeModal} onKeyDown={handleKeyDown} tabIndex="0">
-                <i className="fas fa-times"></i>
-            </span>
-            <label className="password-modal__label">New password</label>
-            <input 
-                type="password"
-                name="newPassword"
-                onChange={handleChange}
-                value={newPassword}
-                className="password-modal__input"
-                required
-            />
-            <label className="password-modal__label">Confirm new password</label>
-            <input 
-                type="password"
-                name="confirmedNewPassword"
-                onChange={handleChange}
-                value={confirmedNewPassword}
-                className="password-modal__input"
-                required
-            />
-            <button type="submit" className="password-modal__submit-btn">Update</button>
-        </form>
+        <div className="overlay">
+            <form className="password-modal" onSubmit={handleSubmit}>
+                <span className="password-modal__close-btn" onClick={closeModal} onKeyDown={handleKeyDown} tabIndex="0">
+                    <i className="fas fa-times"></i>
+                </span>
+                <label className="password-modal__label">New password</label>
+                <input 
+                    type="password"
+                    name="newPassword"
+                    onChange={handleChange}
+                    value={newPassword}
+                    className="password-modal__input"
+                    required
+                />
+                <label className="password-modal__label">Confirm new password</label>
+                <input 
+                    type="password"
+                    name="confirmedNewPassword"
+                    onChange={handleChange}
+                    value={confirmedNewPassword}
+                    className="password-modal__input"
+                    required
+                />
+                <button type="submit" className="password-modal__submit-btn">Update</button>
+            </form>
+        </div>
     );
 }
 

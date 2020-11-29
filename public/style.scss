@@ -71,6 +71,15 @@ body {
     overflow: hidden;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+}
 
 
 // login and registration page --------------------------------------------------------------------
@@ -393,7 +402,6 @@ body {
     width: 35%;
     background: $greyish_color;
     z-index: 2;
-    box-shadow: 0 3px 10px 5px $grey_color;
 }
 
 .password-modal__close-btn, .link-modal__close-btn {
