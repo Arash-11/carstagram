@@ -445,7 +445,7 @@ body {
   width: 70%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1150px) {
   .login-signup-form, .password-modal, .link-modal {
     position: absolute;
     top: 50%;

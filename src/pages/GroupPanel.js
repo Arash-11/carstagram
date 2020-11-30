@@ -103,7 +103,7 @@ function GroupPanel (props) {
         props.showCorrectGroup(groupName);
         setToHighlightID(event.target.id);
         // only on smaller screens, close the left GroupPanel after a group name has been clicked
-        if (window.innerWidth < 800) {
+        if (window.innerWidth < 1150) {
             setTimeout(props.closePanel, 300);
         }
     }
