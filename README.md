@@ -25,6 +25,8 @@ I've used Firebase for the backend and also implemented authentication so that e
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and has been deployed on Netlify.
 
+There are a few minor bugs, and I also have some cool features in mind that I want to add. I'll get back to this project in the near-future.
+
 <br />
 
 ## Technologies used
